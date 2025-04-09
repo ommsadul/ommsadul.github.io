@@ -29,14 +29,14 @@ export default function Home() {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };  return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen">      {/* Main content starts directly */}
+    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}
         {/* Navigation Links - Top Left */}<motion.nav 
-        className="fixed top-6 left-6 z-40 max-w-[45vw] sm:max-w-none"
+        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
         variants={navContainer}
         initial="hidden"
         animate="show"
       >
-        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-xs sm:text-sm">
+        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
           <motion.li variants={navItem} className="mb-1">
             <Link href="/experience" className="text-xs sm:text-sm">
               experience
@@ -63,10 +63,9 @@ export default function Home() {
             </Link>
           </motion.li>
         </motion.ul>
-      </motion.nav>
-        {/* Main Content - Center */}
+      </motion.nav>        {/* Main Content - Center */}
       <motion.div
-        className="text-center z-10 relative"
+        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-md sm:max-w-lg md:max-w-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.8 }} // Delayed to appear after intro animation
@@ -74,7 +73,7 @@ export default function Home() {
         <motion.div
           className="mb-8 overflow-hidden"
         >          <motion.h1
-            className="text-4xl md:text-5xl font-normal tracking-tight relative inline-block"
+            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight relative inline-block"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ 
@@ -165,13 +164,13 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </motion.div>      {/* Social Links - Bottom Left */}      <motion.div 
-        className="fixed bottom-6 left-6 z-40 max-w-[45vw] sm:max-w-none"
+        className="fixed bottom-6 left-6 z-40 w-[40vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 3.5 }}
       >
         <motion.ul 
-          className="flex flex-wrap gap-x-2 gap-y-1 sm:space-x-4 text-xs sm:text-sm"
+          className="flex flex-wrap gap-x-2 gap-y-1 sm:space-x-4 text-2xs sm:text-xs md:text-sm"
           variants={navContainer}
           initial="hidden"
           animate="show"
@@ -235,13 +234,13 @@ export default function Home() {
           </motion.li>        </motion.ul>
       </motion.div>      {/* Book a Meeting - Bottom Right */}
       <motion.div 
-        className="fixed bottom-6 right-6 z-40 max-w-[45vw] sm:max-w-none"
+        className="fixed bottom-6 right-6 z-40 w-auto sm:max-w-none text-right"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 3.7 }}
       >
         <motion.ul 
-          className="flex flex-wrap"
+          className="flex flex-wrap justify-end"
           variants={navContainer}
           initial="hidden"
           animate="show"
