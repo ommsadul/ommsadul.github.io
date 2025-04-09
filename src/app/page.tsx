@@ -4,76 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-// Floating particles effect component
-const Particles = () => {
-  const [particles, setParticles] = useState<Array<{
-    x: number;
-    y: number;
-    size: number;
-    duration: number;
-    delay: number;
-    scale: number;
-    xEnd: number;
-    yEnd: number;
-  }>>([]);
-
-  useEffect(() => {
-    // Only generate particles on the client side
-    const newParticles = Array.from({ length: 20 }, () => ({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      size: Math.random() * 6 + 2,
-      duration: Math.random() * 30 + 20,
-      delay: Math.random() * 5,
-      scale: Math.random() * 0.8 + 0.2,
-      xEnd: Math.random() * window.innerWidth,
-      yEnd: Math.random() * window.innerHeight,
-    }));
-    setParticles(newParticles);
-  }, []);
-
-  return (
-    <div className="particles-container absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      {particles.map((particle, i) => (
-        <motion.div
-          key={i}
-          className="particle absolute rounded-full bg-gray-200 dark:bg-gray-800"
-          initial={{
-            opacity: 0,
-            scale: 0,
-            x: particle.x,
-            y: particle.y,
-          }}
-          animate={{
-            opacity: [0, 0.4, 0],
-            scale: [0, particle.scale, 0],
-            x: [null, particle.xEnd],
-            y: [null, particle.yEnd],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            delay: particle.delay,
-            ease: "linear"
-          }}
-          style={{
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
-  
-  // Prevent hydration mismatch with window object
+    // Prevent hydration mismatch with window object
   useEffect(() => {
     setMounted(true);
   }, []);
+  // Component mounted
 
   // Staggered navigation links animation
   const navContainer = {
@@ -90,47 +28,10 @@ export default function Home() {
   const navItem = {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
-  };
-
-  return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen">
-      {mounted && <Particles />}
-        {/* Intro animation overlay */}
-      <AnimatePresence mode="wait">
-        {mounted && (          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white dark:from-gray-900 dark:to-black z-50 flex items-center justify-center intro-overlay"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 0 }}
-            exit={{ opacity: 0, pointerEvents: "none" }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            onAnimationComplete={() => {
-              // Make sure overlay is completely removed after animation
-              const element = document.querySelector('.intro-overlay');
-              if (element) {
-                element.remove();
-              }
-            }}
-            style={{ pointerEvents: "auto" }}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ 
-                scale: [0.8, 1.2, 1],
-                opacity: [0, 1, 0]
-              }}
-              transition={{ 
-                duration: 1.5,
-                times: [0, 0.5, 1]
-              }}
-              className="text-4xl font-light"
-            >
-              omm sadul
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+  };  return (
+    <div className="relative flex flex-col justify-center items-center min-h-screen">      {/* Main content starts directly */}
       
-      {/* Navigation Links - Top Left */}      <motion.nav 
+      {/* Navigation Links - Top Left */}<motion.nav 
         className="fixed top-6 left-6 z-40"
         variants={navContainer}
         initial="hidden"
@@ -331,6 +232,29 @@ export default function Home() {
               className="text-sm"
             >
               medium
+            </a>
+          </motion.li>        </motion.ul>
+      </motion.div>      {/* Book a Meeting - Bottom Right */}
+      <motion.div 
+        className="fixed bottom-6 right-6 z-40"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 3.7 }}
+      >
+        <motion.ul 
+          className="flex flex-wrap"
+          variants={navContainer}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.li variants={navItem}>
+            <a 
+              href="https://cal.com/ommsadul/10min?user=ommsadul" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm"
+            >
+              book a meeting
             </a>
           </motion.li>
         </motion.ul>
