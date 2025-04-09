@@ -8,19 +8,16 @@ export function ThemeToggle() {
   
   return (
     <motion.button
-      className="theme-toggle p-2 sm:p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-      onClick={toggleTheme}
-      whileHover={{ 
+      className="theme-toggle p-2 sm:p-3"
+      onClick={toggleTheme}      whileHover={{ 
         scale: 1.05,
-        rotate: theme === 'light' ? -5 : 5,
-        transition: { type: "spring", stiffness: 400, damping: 10 }
+        transition: { type: "spring", stiffness: 400, damping: 15 }
       }}
-      whileTap={{ scale: 0.9, rotate: theme === 'light' ? -15 : 15 }}
-      initial={{ opacity: 0, scale: 0.8, rotate: theme === 'light' ? -15 : 15 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ 
         opacity: 1, 
-        scale: 1, 
-        rotate: 0,
+        scale: 1,
         transition: { 
           type: "spring",
           stiffness: 260,

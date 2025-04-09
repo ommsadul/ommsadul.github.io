@@ -130,35 +130,35 @@ export default function Home() {
         )}
       </AnimatePresence>
       
-      {/* Navigation Links - Top Left */}
-      <motion.nav 
+      {/* Navigation Links - Top Left */}      <motion.nav 
         className="fixed top-6 left-6 z-40"
         variants={navContainer}
         initial="hidden"
         animate="show"
       >
-        <motion.ul className="flex space-x-4 text-sm">          <motion.li variants={navItem}>
-            <Link href="/experience" className="text-sm">
+        <motion.ul className="flex flex-wrap space-x-2 sm:space-x-4 text-xs sm:text-sm max-w-[180px] sm:max-w-none">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/experience" className="text-xs sm:text-sm">
               experience
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/projects" className="text-sm">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/projects" className="text-xs sm:text-sm">
               projects
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/publications" className="text-sm">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/publications" className="text-xs sm:text-sm">
               research publications
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/mlblogs" className="text-sm">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/mlblogs" className="text-xs sm:text-sm">
               blogs
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/awards" className="text-sm">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/awards" className="text-xs sm:text-sm">
               awards
             </Link>
           </motion.li>
@@ -173,9 +173,8 @@ export default function Home() {
       >
         <motion.div
           className="mb-8 overflow-hidden"
-        >
-          <motion.h1
-            className="text-3xl md:text-4xl font-normal tracking-tight relative inline-block"
+        >          <motion.h1
+            className="text-4xl md:text-5xl font-normal tracking-tight relative inline-block"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ 
@@ -219,16 +218,15 @@ export default function Home() {
             damping: 20,
             delay: 2.7
           }}
-        >
-          <motion.div className="relative space-y-2">
+        >          <motion.div className="relative flex flex-col items-center space-y-3">
             <motion.p
-              className="relative z-10 inline-block"
+              className="relative z-10 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 3.0 }}
             >
               <motion.span 
-                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text"
+                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text whitespace-nowrap inline-block"
                 initial={{ backgroundPosition: "200% 0" }}
                 animate={{ backgroundPosition: "0% 0" }}
                 transition={{ duration: 1.2, delay: 3.2 }}
@@ -238,13 +236,12 @@ export default function Home() {
             </motion.p>
             
             <motion.p
-              className="relative z-10"
+              className="relative z-10 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 3.3 }}
-            >
-              <motion.span 
-                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text"
+            >              <motion.span 
+                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text whitespace-nowrap inline-block"
                 initial={{ backgroundPosition: "200% 0" }}
                 animate={{ backgroundPosition: "0% 0" }}
                 transition={{ duration: 1.2, delay: 3.5 }}
@@ -267,19 +264,18 @@ export default function Home() {
             />
           </motion.div>
         </motion.div>
-      </motion.div>        {/* Social Links - Bottom Left */}
-      <motion.div 
+      </motion.div>        {/* Social Links - Bottom Left */}      <motion.div 
         className="fixed bottom-6 left-6 z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 3.5 }}
       >
         <motion.ul 
-          className="flex space-x-4 text-sm"
+          className="flex flex-wrap space-x-2 sm:space-x-4 text-xs sm:text-sm max-w-[180px] sm:max-w-none"
           variants={navContainer}
           initial="hidden"
           animate="show"
-        >          <motion.li variants={navItem}>
+        ><motion.li variants={navItem}>
             <a 
               href="https://github.com/ommsadul" 
               target="_blank" 
