@@ -6,18 +6,27 @@ import Link from 'next/link';
 export default function MLBlogsPage() {
   return (
     <>
-      <motion.h1
-        className="text-lg font-normal tracking-tight mb-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        guide blogs
-      </motion.h1>
-      
-      <div className="space-y-8">        {/* Blog 1 */}
+      <div className="flex justify-between items-center mb-6">
+        <motion.h1
+          className="text-lg font-normal tracking-tight"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          guide blogs
+        </motion.h1>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+        >
+          <Link href="/" className="text-sm">← back to home</Link>
+        </motion.div>
+      </div>
+        <div className="space-y-8">        {/* Blog 1 */}
         <motion.article 
-          className="border-b border-dashed border-gray-200 dark:border-gray-800 pb-8 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900"
+          className="pb-8 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.1 }}
@@ -30,19 +39,7 @@ export default function MLBlogsPage() {
           <Link href="https://medium.com/@omssadul" className="text-sm border-b border-dashed border-gray-300 dark:border-gray-700">
             read more →
           </Link>
-        </motion.article>
-      </div>
-      
-      <motion.div 
-        className="mt-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, delay: 0.3 }}
-      >
-        <Link href="/" className="text-sm border-b border-dashed border-gray-300 dark:border-gray-700">
-          ← back
-        </Link>
-      </motion.div>
+        </motion.article>      </div>
     </>
   );
 }

@@ -77,8 +77,8 @@
   
   .section-content {
     @apply opacity-100;
-  }
-    .section li, .project-item, .blog-item {
+  }  
+  .section li, .project-item, .blog-item {
     @apply py-2 mb-2 border-b border-dashed border-gray-200 dark:border-gray-800 last:border-b-0 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md px-2;
   }
     ul {
@@ -87,5 +87,9 @@
   
   .experience-list li {
     @apply py-2 mb-2 border-b-0 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md px-2;
+  }
+  
+  .home-link, .home-social-link {
+    @apply border-b-0 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md px-1;
   }
 }

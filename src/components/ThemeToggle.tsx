@@ -5,14 +5,29 @@ import { motion } from 'framer-motion';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-    return (
+  
+  return (
     <motion.button
       className="theme-toggle p-2 sm:p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
       onClick={toggleTheme}
-      whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ 
+        scale: 1.05,
+        rotate: theme === 'light' ? -5 : 5,
+        transition: { type: "spring", stiffness: 400, damping: 10 }
+      }}
+      whileTap={{ scale: 0.9, rotate: theme === 'light' ? -15 : 15 }}
+      initial={{ opacity: 0, scale: 0.8, rotate: theme === 'light' ? -15 : 15 }}
+      animate={{ 
+        opacity: 1, 
+        scale: 1, 
+        rotate: 0,
+        transition: { 
+          type: "spring",
+          stiffness: 260,
+          damping: 20
+        }
+      }}
+      transition={{ duration: 0.5 }}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === 'light' ? 'dark' : 'light'}

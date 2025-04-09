@@ -5,6 +5,7 @@ import { ThemeToggle } from '../components/ThemeToggle';
 import './globals.css';
 import { JetBrains_Mono } from 'next/font/google';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const mono = JetBrains_Mono({ subsets: ['latin'] });
 
@@ -12,7 +13,11 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {  return (
+}) {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+  
+  return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -21,32 +26,15 @@ export default function RootLayout({
       </head>
       <body className={mono.className}>
         <ThemeProvider>
-          <div className="relative min-h-screen">
-            <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50">
+          <div className="relative min-h-screen">            <div className="fixed top-6 right-6 z-50">
               <ThemeToggle />
             </div>
             <motion.div
-              className="content-wrapper"
+              className={`${isHomePage ? 'content-wrapper-home' : 'content-wrapper'}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-            >              {children}
-              <footer className="footer">
-                <div className="footer-container">
-                  <a href="https://github.com/ommsadul">github</a>
-                  <span className="footer-dot hide-on-xs">•</span>
-                  <a href="https://x.com/sadulom13">x</a>
-                  <span className="footer-dot hide-on-xs">•</span>
-                  <a href="https://scholar.google.com/citations?hl=en&user=RNrHfXMAAAAJ">google scholar</a>
-                  <span className="footer-dot hide-on-xs">•</span>
-                  <a href="https://www.linkedin.com/in/omm-sadul-706515227/">linkedin</a>
-                  <span className="footer-dot hide-on-xs">•</span>
-                  <a href="mailto:omssadul@gmail.com">email</a>
-                  <span className="footer-dot hide-on-xs">•</span>
-                  <a href="https://medium.com/@omssadul">medium</a>
-                </div>
-              </footer>
-            </motion.div>
+            >              {children}</motion.div>
           </div>
         </ThemeProvider>
       </body>
