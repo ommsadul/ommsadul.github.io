@@ -97,9 +97,8 @@ export default function Home() {
       {mounted && <Particles />}
         {/* Intro animation overlay */}
       <AnimatePresence mode="wait">
-        {mounted && (
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white dark:from-gray-900 dark:to-black z-50 flex items-center justify-center"
+        {mounted && (          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-gray-100 to-white dark:from-gray-900 dark:to-black z-50 flex items-center justify-center intro-overlay"
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
             exit={{ opacity: 0, pointerEvents: "none" }}
@@ -112,7 +111,6 @@ export default function Home() {
               }
             }}
             style={{ pointerEvents: "auto" }}
-            className="intro-overlay"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
