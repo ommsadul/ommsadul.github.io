@@ -87,15 +87,16 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 1.2 }}
                 className="inline-block"
               >
-                hey, i am 
+                hey, i am
               </motion.span>{" "}
               <motion.span
-                className="inline-block relative"
+                className="inline-block relative pr-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 1.4 }}
               >
-                omm sadul                <motion.span
+                omm sadul
+                <motion.span
                   className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
                   initial={{ scaleX: 0, originX: 0 }}
                   animate={{ scaleX: 1 }}
