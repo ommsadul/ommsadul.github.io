@@ -10,7 +10,8 @@ const nextConfig = {
   basePath: '',
   experimental: {
     optimizePackageImports: ['framer-motion'],
-    typedRoutes: true
+    // Disabling typedRoutes to resolve type errors with href props
+    typedRoutes: false
   }
 };
 

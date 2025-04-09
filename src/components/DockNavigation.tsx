@@ -4,11 +4,10 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Route } from 'next';
 
 // Interface for dock item props
 interface DockItemProps {
-  href: Route<string>;
+  href: string;
   label: string;
   icon: React.ReactNode;
   isActive: boolean;

@@ -13,7 +13,7 @@ interface HomeLinkProps {
 export function HomeLink({ href, children, className = '' }: HomeLinkProps) {
   return (
     <Link 
-      href={href} 
+      href={href as any} 
       className={`home-link transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md px-1 border-none ${className}`}
     >
       {children}
