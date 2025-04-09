@@ -40,8 +40,10 @@
 }
 
 @layer components {
-  .container-custom {
-    @apply max-w-3xl mx-auto mt-5 bg-[theme(colors.light.container)] dark:bg-[theme(colors.dark.container)] p-7 md:p-9 rounded-xl shadow-lg relative animate-fade-in;
+  .content-wrapper {
+    @apply max-w-3xl mx-auto mt-2 sm:mt-5 p-4 sm:p-7 md:p-9 relative animate-fade-in;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .section {
@@ -49,19 +51,19 @@
   }
   
   .highlight {
-    @apply p-0 my-5 bg-transparent transition-all duration-200 hover:bg-[theme(colors.light.highlight)] dark:hover:bg-[theme(colors.dark.highlight)] rounded-lg;
+    @apply p-0 my-3 sm:my-5 bg-transparent transition-all duration-200 hover:bg-[theme(colors.light.highlight)] dark:hover:bg-[theme(colors.dark.highlight)] rounded-lg;
   }
   
   .theme-toggle {
-    @apply absolute top-5 right-5 bg-[theme(colors.light.highlight)] dark:bg-[theme(colors.dark.highlight)] border-none cursor-pointer text-2xl text-[theme(colors.light.text)] dark:text-[theme(colors.dark.text)] z-10 p-3 rounded-full transition-all duration-300 ease-out shadow-sm hover:scale-105;
+    @apply bg-[theme(colors.light.highlight)] dark:bg-[theme(colors.dark.highlight)] border-none cursor-pointer text-xl sm:text-2xl text-[theme(colors.light.text)] dark:text-[theme(colors.dark.text)] z-10 p-2 sm:p-3 rounded-full transition-all duration-300 ease-out shadow-sm hover:scale-105;
   }
   
   .footer {
-    @apply mt-5 border-t border-[theme(colors.light.border)] dark:border-[theme(colors.dark.border)] pt-4 text-sm text-[theme(colors.light.footer)] dark:text-[theme(colors.dark.footer)] text-center;
+    @apply mt-5 border-t border-[theme(colors.light.border)] dark:border-[theme(colors.dark.border)] pt-4 text-xs sm:text-sm text-[theme(colors.light.footer)] dark:text-[theme(colors.dark.footer)] text-center;
   }
   
   .footer a {
-    @apply mx-2.5;
+    @apply mx-1 sm:mx-2.5 inline-block my-1;
   }
   
   .section-content {
