@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --font-serif: 'DM Serif Text', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
   
   html {
@@ -13,9 +13,10 @@
   
   body {
     @apply bg-[theme(colors.light.bg)] text-[theme(colors.light.text)] transition-colors duration-300 ease-in-out;
-    font-family: var(--font-serif), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-family: var(--font-mono);
     letter-spacing: -0.011em;
-    line-height: 1.6;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
   
   .dark body {
@@ -23,54 +24,61 @@
   }
   
   h1 {
-    @apply text-2xl font-medium text-[theme(colors.light.heading)] dark:text-[theme(colors.dark.heading)] tracking-tight mb-2.5;
+    @apply text-lg font-normal text-[theme(colors.light.heading)] dark:text-[theme(colors.dark.heading)] tracking-tight mb-6;
   }
   
   h2 {
-    @apply text-xl font-medium text-[theme(colors.light.subheading)] dark:text-[theme(colors.dark.subheading)] tracking-tight mt-3 mb-2 pb-0.5 border-b border-[theme(colors.light.border)] dark:border-[theme(colors.dark.border)];
+    @apply text-lg font-normal text-[theme(colors.light.subheading)] dark:text-[theme(colors.dark.subheading)] tracking-tight mt-6 mb-2 border-b-0;
   }
   
   a {
-    @apply text-[theme(colors.light.link)] dark:text-[theme(colors.dark.link)] no-underline border-b border-transparent transition-all duration-200 hover:border-[theme(colors.light.link)] dark:hover:border-[theme(colors.dark.link)];
+    @apply text-[theme(colors.light.link)] dark:text-[theme(colors.dark.link)] no-underline border-b border-dashed border-gray-300 dark:border-gray-700 transition-all duration-200 hover:border-[theme(colors.light.link)] dark:hover:border-[theme(colors.dark.link)];
   }
   
   p {
-    @apply my-1.5 text-[theme(colors.light.paragraph)] dark:text-[theme(colors.dark.paragraph)];
+    @apply my-1 text-[theme(colors.light.paragraph)] dark:text-[theme(colors.dark.paragraph)];
   }
 }
 
-@layer components {
-  .content-wrapper {
-    @apply max-w-3xl mx-auto mt-2 sm:mt-5 p-4 sm:p-7 md:p-9 relative animate-fade-in;
+@layer components {  .content-wrapper {
+    @apply max-w-2xl mx-auto mt-6 sm:mt-8 p-4 sm:p-6 md:p-8 relative animate-fade-in;
     width: 100%;
     box-sizing: border-box;
   }
   
   .section {
-    @apply mb-3 pb-0.5;
+    @apply mb-6 pb-0;
   }
     .highlight {
-    @apply p-0 my-3 sm:my-5 bg-transparent transition-all duration-200 hover:bg-[#eaeaea] dark:hover:bg-[theme(colors.dark.highlight)] rounded-lg;
+    @apply p-2 my-3 bg-transparent rounded-md transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900;
   }
   
   .theme-toggle {
-    @apply bg-[theme(colors.light.highlight)] dark:bg-[theme(colors.dark.highlight)] border-none cursor-pointer text-xl sm:text-2xl text-[theme(colors.light.text)] dark:text-[theme(colors.dark.text)] z-10 p-2 sm:p-3 rounded-full transition-all duration-300 ease-out shadow-sm hover:scale-105;
+    @apply bg-transparent border-none cursor-pointer text-xs text-[theme(colors.light.text)] dark:text-[theme(colors.dark.text)] z-10 p-2 rounded-none transition-all duration-300 ease-out;
+  }  .footer {
+    @apply mt-12 pt-6 text-xs text-[theme(colors.light.footer)] dark:text-[theme(colors.dark.footer)] border-t border-gray-200 dark:border-gray-800 text-center w-full flex justify-center;
   }
   
-  .footer {
-    @apply mt-5 border-t border-[theme(colors.light.border)] dark:border-[theme(colors.dark.border)] pt-4 text-xs sm:text-sm text-[theme(colors.light.footer)] dark:text-[theme(colors.dark.footer)] text-center;
+  .footer-container {
+    @apply flex flex-wrap justify-center items-center w-full max-w-lg;
   }
   
   .footer a {
-    @apply mx-1 sm:mx-2.5 inline-block my-1;
+    @apply inline-block border-b border-dashed border-transparent hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-200;
+  }
+  
+  .footer-dot {
+    @apply mx-2 text-gray-300 dark:text-gray-700;
   }
   
   .section-content {
-    @apply animate-slide-up opacity-0;
-    animation-delay: calc(var(--delay, 0) * 100ms);
-    animation-fill-mode: both;
+    @apply opacity-100;
   }
     .section li, .project-item, .blog-item {
-    @apply p-4 rounded-lg mb-4 transition-all duration-200 hover:bg-[#eaeaea] dark:hover:bg-[theme(colors.dark.highlight)];
+    @apply py-2 mb-2 border-b border-dashed border-gray-200 dark:border-gray-800 last:border-b-0 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md px-2;
+  }
+  
+  ul {
+    @apply list-none pl-0;
   }
 }
