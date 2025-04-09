@@ -22,9 +22,8 @@ export default function Home() {
           <p>mainly work in developing prediction algorithms/computational medicine.</p>
         </div>
       </Section>
-      
-      <Section title="experience" index={1}>
-        <ul>
+        <Section title="experience" index={1}>
+        <ul className="experience-list">
           <li>
             <span className="text-gray-500 dark:text-gray-400">oct 24' - present</span>
             <span className="block">undergraduate research scholar @ <a href="https://www.jhu.edu/">Johns Hopkins University</a></span>

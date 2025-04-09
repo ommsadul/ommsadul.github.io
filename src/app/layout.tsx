@@ -12,18 +12,17 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  return (
+}) {  return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="description" content="Portfolio of Omm Sadul - Mechanical Engineering Student specializing in computational medicine and prediction algorithms" />
       </head>
       <body className={mono.className}>
         <ThemeProvider>
-          <div className="relative">
-            <div className="fixed top-4 right-4 z-50">
+          <div className="relative min-h-screen">
+            <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50">
               <ThemeToggle />
             </div>
             <motion.div
@@ -35,15 +34,15 @@ export default function RootLayout({
               <footer className="footer">
                 <div className="footer-container">
                   <a href="https://github.com/ommsadul">github</a>
-                  <span className="footer-dot">•</span>
+                  <span className="footer-dot hide-on-xs">•</span>
                   <a href="https://x.com/sadulom13">x</a>
-                  <span className="footer-dot">•</span>
+                  <span className="footer-dot hide-on-xs">•</span>
                   <a href="https://scholar.google.com/citations?hl=en&user=RNrHfXMAAAAJ">google scholar</a>
-                  <span className="footer-dot">•</span>
+                  <span className="footer-dot hide-on-xs">•</span>
                   <a href="https://www.linkedin.com/in/omm-sadul-706515227/">linkedin</a>
-                  <span className="footer-dot">•</span>
+                  <span className="footer-dot hide-on-xs">•</span>
                   <a href="mailto:omssadul@gmail.com">email</a>
-                  <span className="footer-dot">•</span>
+                  <span className="footer-dot hide-on-xs">•</span>
                   <a href="https://medium.com/@omssadul">medium</a>
                 </div>
               </footer>
