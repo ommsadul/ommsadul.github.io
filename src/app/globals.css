@@ -49,9 +49,8 @@
   .section {
     @apply mb-3 pb-0.5;
   }
-  
-  .highlight {
-    @apply p-0 my-3 sm:my-5 bg-transparent transition-all duration-200 hover:bg-[theme(colors.light.highlight)] dark:hover:bg-[theme(colors.dark.highlight)] rounded-lg;
+    .highlight {
+    @apply p-0 my-3 sm:my-5 bg-transparent transition-all duration-200 hover:bg-[#eaeaea] dark:hover:bg-[theme(colors.dark.highlight)] rounded-lg;
   }
   
   .theme-toggle {
@@ -71,8 +70,7 @@
     animation-delay: calc(var(--delay, 0) * 100ms);
     animation-fill-mode: both;
   }
-  
-  .section li, .project-item, .blog-item {
-    @apply p-4 rounded-lg mb-4 transition-all duration-200 hover:bg-[theme(colors.light.highlight)] dark:hover:bg-[theme(colors.dark.highlight)];
+    .section li, .project-item, .blog-item {
+    @apply p-4 rounded-lg mb-4 transition-all duration-200 hover:bg-[#eaeaea] dark:hover:bg-[theme(colors.dark.highlight)];
   }
 }
