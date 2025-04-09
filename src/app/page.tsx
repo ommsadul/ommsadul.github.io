@@ -63,100 +63,93 @@ export default function Home() {
             </Link>
           </motion.li>
         </motion.ul>
-      </motion.nav>        {/* Main Content - Center */}
-      <motion.div
-        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-md sm:max-w-lg md:max-w-xl"
+      </motion.nav>        {/* Main Content - Center */}      <motion.div
+        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.8 }} // Delayed to appear after intro animation
+        transition={{ duration: 0.6, delay: 0.8 }} // Faster appearance after intro animation
       >
         <motion.div
-          className="mb-8 overflow-hidden"
-        >          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight relative inline-block"
+          className="mb-8 overflow-visible"
+        >          <motion.h1            className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight w-auto"
             initial={{ y: 100 }}
-            animate={{ y: 0 }}
+            animate={{ y: -40 }}  
             transition={{ 
               type: "spring", 
               stiffness: 100, 
               damping: 20,
-              delay: 1.9
+              delay: 0.9
             }}
-          >
-            <motion.span 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 2.2 }}
-              className="inline-block"
-            >
-              hey, i am 
-            </motion.span>{" "}
-            <motion.span
-              className="inline-block relative"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 2.5 }}
-            >
-              omm sadul
+          >            <div className="whitespace-nowrap overflow-visible w-auto inline-block">
+              <motion.span 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 1.2 }}
+                className="inline-block"
+              >
+                hey, i am 
+              </motion.span>{" "}
               <motion.span
-                className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
-                initial={{ scaleX: 0, originX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 3.0 }}
-              />
-            </motion.span>
+                className="inline-block relative"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 1.4 }}
+              >
+                omm sadul                <motion.span
+                  className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
+                  initial={{ scaleX: 0, originX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 1.6 }}
+                />
+              </motion.span>
+            </div>
           </motion.h1>
-        </motion.div>
-          <motion.div 
-          className="max-w-md mx-auto"
+        </motion.div><motion.div 
+          className="max-w-md mx-auto mt-8"
           initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          animate={{ y: -20, opacity: 1 }}
           transition={{ 
             type: "spring", 
             stiffness: 100,
             damping: 20,
-            delay: 2.7
+            delay: 1.8
           }}
-        >          <motion.div className="relative flex flex-col items-center space-y-3">
-            <motion.p
-              className="relative z-10 text-center"
+        >          <motion.div className="relative flex flex-col items-center space-y-3">            <motion.p
+              className="relative z-10 text-center text-sm sm:text-base"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 3.0 }}
-            >
-              <motion.span 
-                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text whitespace-nowrap inline-block"
+              transition={{ duration: 0.5, delay: 2.0 }}
+            >              <motion.span 
+                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text inline-block"
                 initial={{ backgroundPosition: "200% 0" }}
                 animate={{ backgroundPosition: "0% 0" }}
-                transition={{ duration: 1.2, delay: 3.2 }}
+                transition={{ duration: 1.0, delay: 2.1 }}
               >
                 a senior year student, studying mechanical engineering.
               </motion.span>
             </motion.p>
-            
-            <motion.p
+              <motion.p
               className="relative z-10 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 3.3 }}
+              transition={{ duration: 0.5, delay: 2.2 }}
             >              <motion.span 
-                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text whitespace-nowrap inline-block"
+                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text inline-block"
                 initial={{ backgroundPosition: "200% 0" }}
                 animate={{ backgroundPosition: "0% 0" }}
-                transition={{ duration: 1.2, delay: 3.5 }}
+                transition={{ duration: 1.0, delay: 2.3 }}
               >
                 mainly work in developing prediction algorithms/computational medicine.
               </motion.span>
             </motion.p>
-            
-            <motion.div
+              <motion.div
               className="absolute -inset-1 bg-gradient-to-r from-transparent via-gray-200/30 dark:via-gray-800/30 to-transparent rounded-lg blur-sm"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: [0, 0.8, 0.4], scale: 1 }}
               transition={{ 
                 duration: 2,
                 times: [0, 0.5, 1],
-                delay: 3.6,
+                delay: 2.4,
                 repeat: Infinity,
                 repeatType: "reverse" 
               }}
@@ -167,7 +160,7 @@ export default function Home() {
         className="fixed bottom-6 left-6 z-40 w-[40vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 3.5 }}
+        transition={{ duration: 0.5, delay: 2.6 }}
       >
         <motion.ul 
           className="flex flex-wrap gap-x-2 gap-y-1 sm:space-x-4 text-2xs sm:text-xs md:text-sm"
@@ -232,12 +225,11 @@ export default function Home() {
               medium
             </a>
           </motion.li>        </motion.ul>
-      </motion.div>      {/* Book a Meeting - Bottom Right */}
-      <motion.div 
+      </motion.div>      {/* Book a Meeting - Bottom Right */}      <motion.div 
         className="fixed bottom-6 right-6 z-40 w-auto sm:max-w-none text-right"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 3.7 }}
+        transition={{ duration: 0.5, delay: 2.7 }}
       >
         <motion.ul 
           className="flex flex-wrap justify-end"
