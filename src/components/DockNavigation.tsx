@@ -83,16 +83,15 @@ export function DockNavigation() {
   
   if (!mounted) return null;
   
-  return (
-    <motion.div
-      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
+  return (    <motion.div
+      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] sm:w-auto"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.5, type: 'spring', stiffness: 300, damping: 25 }}
     >
-      <nav className="dock-navigation">
+      <nav className="dock-navigation w-full overflow-x-auto">
         <motion.ul 
-          className="flex space-x-3 sm:space-x-4 px-5 py-3.5 bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-800/50"
+          className="flex space-x-2 sm:space-x-4 px-3 sm:px-5 py-3 sm:py-3.5 bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-800/50 min-w-fit"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.9 }}

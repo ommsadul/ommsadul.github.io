@@ -30,14 +30,13 @@ export default function Home() {
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };  return (
     <div className="relative flex flex-col justify-center items-center min-h-screen">      {/* Main content starts directly */}
-      
-      {/* Navigation Links - Top Left */}<motion.nav 
-        className="fixed top-6 left-6 z-40"
+        {/* Navigation Links - Top Left */}<motion.nav 
+        className="fixed top-6 left-6 z-40 max-w-[45vw] sm:max-w-none"
         variants={navContainer}
         initial="hidden"
         animate="show"
       >
-        <motion.ul className="flex flex-wrap space-x-2 sm:space-x-4 text-xs sm:text-sm max-w-[180px] sm:max-w-none">
+        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-xs sm:text-sm">
           <motion.li variants={navItem} className="mb-1">
             <Link href="/experience" className="text-xs sm:text-sm">
               experience
@@ -165,14 +164,14 @@ export default function Home() {
             />
           </motion.div>
         </motion.div>
-      </motion.div>        {/* Social Links - Bottom Left */}      <motion.div 
-        className="fixed bottom-6 left-6 z-40"
+      </motion.div>      {/* Social Links - Bottom Left */}      <motion.div 
+        className="fixed bottom-6 left-6 z-40 max-w-[45vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 3.5 }}
       >
         <motion.ul 
-          className="flex flex-wrap space-x-2 sm:space-x-4 text-xs sm:text-sm max-w-[180px] sm:max-w-none"
+          className="flex flex-wrap gap-x-2 gap-y-1 sm:space-x-4 text-xs sm:text-sm"
           variants={navContainer}
           initial="hidden"
           animate="show"
@@ -236,7 +235,7 @@ export default function Home() {
           </motion.li>        </motion.ul>
       </motion.div>      {/* Book a Meeting - Bottom Right */}
       <motion.div 
-        className="fixed bottom-6 right-6 z-40"
+        className="fixed bottom-6 right-6 z-40 max-w-[45vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 3.7 }}
