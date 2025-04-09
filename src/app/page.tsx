@@ -29,40 +29,41 @@ export default function Home() {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };  return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}      {/* Navigation Links - Top Left */}<motion.nav 
-        className="fixed top-6 left-4 sm:left-6 z-40 w-[50vw] sm:w-auto sm:max-w-none"
+    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}
+        {/* Navigation Links - Top Left */}<motion.nav 
+        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
         variants={navContainer}
         initial="hidden"
         animate="show"
       >
-        <motion.ul className="flex flex-col sm:flex-row gap-y-2 gap-x-3 sm:gap-y-0 sm:space-x-4">
-          <motion.li variants={navItem}>
-            <Link href="/experience" className="text-xs sm:text-sm py-1 px-1 block">
+        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/experience" className="text-xs sm:text-sm">
               experience
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/projects" className="text-xs sm:text-sm py-1 px-1 block">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/projects" className="text-xs sm:text-sm">
               projects
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/publications" className="text-xs sm:text-sm py-1 px-1 block">
-              publications
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/publications" className="text-xs sm:text-sm">
+              research publications
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/mlblogs" className="text-xs sm:text-sm py-1 px-1 block">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/mlblogs" className="text-xs sm:text-sm">
               blogs
             </Link>
           </motion.li>
-          <motion.li variants={navItem}>
-            <Link href="/awards" className="text-xs sm:text-sm py-1 px-1 block">
+          <motion.li variants={navItem} className="mb-1">
+            <Link href="/awards" className="text-xs sm:text-sm">
               awards
             </Link>
           </motion.li>
         </motion.ul>
-      </motion.nav>{/* Main Content - Center */}
+      </motion.nav>        {/* Main Content - Center */}
       <motion.div
         className="text-center z-10 relative px-4 sm:px-0 w-full max-w-md sm:max-w-lg md:max-w-xl"
         initial={{ opacity: 0 }}
@@ -163,13 +164,13 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </motion.div>      {/* Social Links - Bottom Left */}      <motion.div 
-        className="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 z-40 w-auto"
+        className="fixed bottom-6 left-6 z-40 w-[40vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 3.5 }}
       >
         <motion.ul 
-          className="flex flex-col sm:flex-row gap-y-2 gap-x-3 sm:gap-y-0 sm:space-x-4"
+          className="flex flex-wrap gap-x-2 gap-y-1 sm:space-x-4 text-2xs sm:text-xs md:text-sm"
           variants={navContainer}
           initial="hidden"
           animate="show"
