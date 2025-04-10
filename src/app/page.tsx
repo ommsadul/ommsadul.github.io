@@ -31,16 +31,13 @@ export default function Home() {
   };
   
   return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">
-      {/* Main content starts directly */}
-      {/* Navigation Links - Top Left */}
+    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}      {/* Navigation Links - Top Left */}
       <motion.nav
         className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
         variants={navContainer}
         initial="hidden"
         animate="show"
-      >
-        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
+      >        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
           <motion.li variants={navItem} className="mb-1">
             <Link href="/experience" className="text-xs sm:text-sm">
               experience
@@ -68,7 +65,6 @@ export default function Home() {
           </motion.li>
         </motion.ul>
       </motion.nav>
-      
       {/* Main Content - Center */}      <motion.div
         className="text-center z-10 relative px-4 sm:px-0 w-full max-w-full flex flex-col items-center justify-center"
         initial={{ opacity: 0 }}

@@ -24,8 +24,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="description" content="Portfolio of Omm Sadul - Mechanical Engineering Student specializing in computational medicine and prediction algorithms" />
       </head>      <body className={mono.className}>
-        <ThemeProvider>          <div className="relative min-h-screen flex flex-col items-center">
-            <div className="fixed top-5 right-6 z-50">
+        <ThemeProvider>          <div className="relative min-h-screen flex flex-col items-center">            <div className="fixed top-5 right-6 z-50 flex items-center gap-x-5">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+              >
+                <span className="text-xs sm:text-sm font-light tracking-wider text-[theme(colors.light.link)] dark:text-[theme(colors.dark.link)] border-b border-dashed border-gray-300 dark:border-gray-700 transition-all duration-200 hover:border-[theme(colors.light.link)] dark:hover:border-[theme(colors.dark.link)]">
+                  seeking computational medicine lab positions   
+                </span>
+              </motion.div>
               <ThemeToggle />
             </div>            <motion.div
               className={`${isHomePage ? 'content-wrapper-home' : 'content-wrapper'}`}
