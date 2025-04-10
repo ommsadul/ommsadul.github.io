@@ -7,12 +7,12 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
-    // Prevent hydration mismatch with window object
+  
+  // Prevent hydration mismatch with window object
   useEffect(() => {
     setMounted(true);
   }, []);
-  // Component mounted
-
+  
   // Staggered navigation links animation
   const navContainer = {
     hidden: { opacity: 0 },
@@ -28,9 +28,13 @@ export default function Home() {
   const navItem = {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
-  };  return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}
-        {/* Navigation Links - Top Left */}<motion.nav 
+  };
+  
+  return (
+    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">
+      {/* Main content starts directly */}
+      {/* Navigation Links - Top Left */}
+      <motion.nav
         className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
         variants={navContainer}
         initial="hidden"
@@ -63,24 +67,27 @@ export default function Home() {
             </Link>
           </motion.li>
         </motion.ul>
-      </motion.nav>        {/* Main Content - Center */}      <motion.div
-        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-full"
+      </motion.nav>
+      
+      {/* Main Content - Center */}      <motion.div
+        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-full flex flex-col items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.8 }} // Faster appearance after intro animation
       >
-        <motion.div
-          className="mb-8 overflow-visible"
-        >          <motion.h1            className="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight w-auto"
-            initial={{ y: 100 }}
-            animate={{ y: -40 }}  
+        <motion.div className="mb-8 overflow-visible flex justify-center items-center">
+          <motion.h1
+            className="text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight w-auto mx-auto"
+            initial={{ y: 200 }}
+            animate={{ y: 50 }}  
             transition={{ 
               type: "spring", 
               stiffness: 100, 
               damping: 20,
               delay: 0.9
             }}
-          >            <div className="whitespace-nowrap overflow-visible w-auto inline-block">
+          >
+            <div className="whitespace-nowrap overflow-visible w-auto inline-block">
               <motion.span 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -99,14 +106,12 @@ export default function Home() {
                 <motion.span
                   className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
                   initial={{ scaleX: 0, originX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 1.6 }}
+                  animate={{ scaleX: 1 }}                  transition={{ duration: 0.6, delay: 1.6 }}
                 />
               </motion.span>
             </div>
-          </motion.h1>
-        </motion.div><motion.div 
-          className="max-w-md mx-auto mt-8"
+          </motion.h1>        </motion.div>        {/* Redesigned Summary Section - Experience-like Format */}        <motion.div 
+          className="w-full mx-auto mt-8 px-0 sm:px-0 md:px-0 flex justify-center"
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: -20, opacity: 1 }}
           transition={{ 
@@ -115,49 +120,62 @@ export default function Home() {
             damping: 20,
             delay: 1.8
           }}
-        >          <motion.div className="relative flex flex-col items-center space-y-3">            <motion.p
-              className="relative z-10 text-center text-sm sm:text-base"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.0 }}
-            >              <motion.span 
-                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text inline-block"
-                initial={{ backgroundPosition: "200% 0" }}
-                animate={{ backgroundPosition: "0% 0" }}
-                transition={{ duration: 1.0, delay: 2.1 }}
+        >
+          <motion.div 
+            className="text-left max-w-xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2.0 }}
+          >            <motion.div className="space-y-1 flex flex-col items-left">              <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wide"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 2.2 }}
               >
-                a senior year student, studying mechanical engineering.
-              </motion.span>
-            </motion.p>
-              <motion.p
-              className="relative z-10 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.2 }}
-            >              <motion.span 
-                className="text-gradient bg-gradient-to-r from-current to-gray-500 dark:from-current dark:to-gray-400 bg-clip-text inline-block"
-                initial={{ backgroundPosition: "200% 0" }}
-                animate={{ backgroundPosition: "0% 0" }}
-                transition={{ duration: 1.0, delay: 2.3 }}
+                Senior mech undergrad here, barely surviving thermodynamics.
+              </motion.p>
+              
+              <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wide"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}                
+                transition={{ duration: 0.4, delay: 2.4 }}
               >
-                mainly work in developing prediction algorithms/computational medicine.
-              </motion.span>
-            </motion.p>
-              <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-transparent via-gray-200/30 dark:via-gray-800/30 to-transparent rounded-lg blur-sm"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: [0, 0.8, 0.4], scale: 1 }}
-              transition={{ 
-                duration: 2,
-                times: [0, 0.5, 1],
-                delay: 2.4,
-                repeat: Infinity,
-                repeatType: "reverse" 
-              }}
-            />
+                I mess with predictive ML and computational medicine, plus dabble in open-source and cryptography.
+              </motion.p>
+              
+              <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wide"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 2.6 }}
+              >
+                Professors, chai and Good Day biscuits will make me give your lab 100x outputs.
+              </motion.p>
+              
+              <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wide"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 2.8 }}
+              >
+                PIs, my SaaS is coming—revolutionary or just ridiculous, you decide.
+              </motion.p>
+                <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wide"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 3.0 }}
+              >
+                It'll help you get through this tough time of funding, or at least keep you entertained while the grants dry up.
+              </motion.p>
+            </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>      {/* Social Links - Bottom Left */}      <motion.div 
+      </motion.div>
+      
+      {/* Social Links - Bottom Left */}
+      <motion.div 
         className="fixed bottom-6 left-6 z-40 w-[40vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -168,7 +186,8 @@ export default function Home() {
           variants={navContainer}
           initial="hidden"
           animate="show"
-        ><motion.li variants={navItem}>
+        >
+          <motion.li variants={navItem}>
             <a 
               href="https://github.com/ommsadul" 
               target="_blank" 
@@ -225,8 +244,12 @@ export default function Home() {
             >
               medium
             </a>
-          </motion.li>        </motion.ul>
-      </motion.div>      {/* Book a Meeting - Bottom Right */}      <motion.div 
+          </motion.li>
+        </motion.ul>
+      </motion.div>
+      
+      {/* Book a Meeting - Bottom Right */}
+      <motion.div 
         className="fixed bottom-6 right-6 z-40 w-auto sm:max-w-none text-right"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
