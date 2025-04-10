@@ -81,29 +81,21 @@ export default function Home() {
               damping: 20,
               delay: 0.9
             }}
-          >
-            <div className="whitespace-nowrap overflow-visible w-auto inline-block">
+          >            <div className="whitespace-nowrap overflow-visible w-auto inline-block relative">
               <motion.span 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 1.2 }}
                 className="inline-block"
               >
-                hey, i am
-              </motion.span>{" "}
-              <motion.span
-                className="inline-block relative pr-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 1.4 }}
-              >
-                omm sadul
-                <motion.span
-                  className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
-                  initial={{ scaleX: 0, originX: 0 }}
-                  animate={{ scaleX: 1 }}                  transition={{ duration: 0.6, delay: 1.6 }}
-                />
+                hey, i am omm sadul
               </motion.span>
+              <motion.span
+                className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
+                initial={{ scaleX: 0, originX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 1.6 }}
+              />
             </div>
           </motion.h1>        </motion.div>        {/* Redesigned Summary Section - Experience-like Format */}        <motion.div 
           className="w-full mx-auto mt-8 px-0 sm:px-0 md:px-0 flex justify-center"
