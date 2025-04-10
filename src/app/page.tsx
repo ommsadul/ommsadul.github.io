@@ -75,11 +75,10 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.8 }} // Faster appearance after intro animation
       >
-        <motion.div className="mb-8 overflow-visible flex justify-center items-center">
-          <motion.h1
+        <motion.div className="mb-8 overflow-visible flex justify-center items-center">          <motion.h1
             className="text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight w-auto mx-auto"
-            initial={{ y: 200 }}
-            animate={{ y: 50 }}  
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}  
             transition={{ 
               type: "spring", 
               stiffness: 100, 
@@ -113,61 +112,61 @@ export default function Home() {
           </motion.h1>        </motion.div>        {/* Redesigned Summary Section - Experience-like Format */}        <motion.div 
           className="w-full mx-auto mt-8 px-0 sm:px-0 md:px-0 flex justify-center"
           initial={{ y: 40, opacity: 0 }}
-          animate={{ y: -20, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ 
             type: "spring", 
             stiffness: 100,
             damping: 20,
-            delay: 1.8
+            delay: 1.4
           }}
         >
           <motion.div 
             className="text-left max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.0 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
           >            <motion.div className="space-y-1 flex flex-col items-left">              <motion.p 
                 className="text-xs sm:text-sm font-light tracking-wide"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 2.2 }}
+                transition={{ duration: 0.2, delay: 1.6 }}
               >
-                Senior mech undergrad here, barely surviving thermodynamics.
+                Senior mech undergrad here, barely surviving thermodynamics & random ass-surfaces.
               </motion.p>
               
               <motion.p 
                 className="text-xs sm:text-sm font-light tracking-wide"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}                
-                transition={{ duration: 0.4, delay: 2.4 }}
+                transition={{ duration: 0.2, delay: 1.8 }}
               >
-                I mess with predictive ML and computational medicine, plus dabble in open-source and cryptography.
+                I mess with predictive ML and computational medicine, plus dabble in open-source and cryptography - because who doesnt love bounties?
               </motion.p>
               
               <motion.p 
                 className="text-xs sm:text-sm font-light tracking-wide"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 2.6 }}
+                transition={{ duration: 0.2, delay: 2.0 }}
               >
-                Professors, chai and Good Day biscuits will make me give your lab 100x outputs.
+                Professors, chai and Good-Day biscuits will make me give your lab 100x outputs.
               </motion.p>
               
               <motion.p 
                 className="text-xs sm:text-sm font-light tracking-wide"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 2.8 }}
+                transition={{ duration: 0.2, delay: 2.2 }}
               >
-                PIs, my SaaS is coming—revolutionary or just ridiculous, you decide.
+                PIs, my SaaS is coming — revolutionary or just ridiculous, you decide.
               </motion.p>
                 <motion.p 
                 className="text-xs sm:text-sm font-light tracking-wide"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 3.0 }}
+                transition={{ duration: 0.2, delay: 2.4 }}
               >
-                It'll help you get through this tough time of funding, or at least keep you entertained while the grants dry up.
+                PI-TRACKER : It'll help you get through this tough time of funding, or at least keep you entertained while the grants dry up.
               </motion.p>
             </motion.div>
           </motion.div>
