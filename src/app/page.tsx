@@ -124,18 +124,17 @@ export default function Home() {
             className="text-left max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.5 }}
-          >            <motion.div className="space-y-1 flex flex-col items-left">              <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wide"
+            transition={{ duration: 0.5, delay: 1.5 }}          >            <motion.div className="space-y-3 flex flex-col items-center">              <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 1.6 }}
               >
-                Senior mech undergrad here, barely surviving thermodynamics & random ass-surfaces.
+                Senior mech undergrad here, barely surviving thermodynamics & random surfaces.
               </motion.p>
               
               <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wide"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}                
                 transition={{ duration: 0.2, delay: 1.8 }}
@@ -144,7 +143,7 @@ export default function Home() {
               </motion.p>
               
               <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wide"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 2.0 }}
@@ -153,7 +152,7 @@ export default function Home() {
               </motion.p>
               
               <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wide"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 2.2 }}
@@ -161,7 +160,7 @@ export default function Home() {
                 PIs, my SaaS is coming — revolutionary or just ridiculous, you decide.
               </motion.p>
                 <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wide"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 2.4 }}
