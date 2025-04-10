@@ -31,12 +31,13 @@ export default function Home() {
   };
   
   return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}      {/* Navigation Links - Top Left */}      <motion.nav
-        className="fixed top-6 left-3 sm:left-6 z-40 max-w-[70vw] sm:max-w-none"
+    <div className="relative flex flex-col justify-center items-center min-h-screen w-full">      {/* Main content starts directly */}      {/* Navigation Links - Top Left */}
+      <motion.nav
+        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
         variants={navContainer}
         initial="hidden"
         animate="show"
-      ><motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
+      >        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
           <motion.li variants={navItem} className="mb-1">
             <Link href="/experience" className="text-xs sm:text-sm">
               experience
@@ -158,9 +159,10 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </motion.div>
-        {/* Social Links - Bottom Left */}
+      
+      {/* Social Links - Bottom Left */}
       <motion.div 
-        className="fixed bottom-20 sm:bottom-6 left-3 sm:left-6 z-40 max-w-[70vw] sm:max-w-none"
+        className="fixed bottom-6 left-6 z-40 w-[40vw] sm:max-w-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 2.6 }}
@@ -234,7 +236,7 @@ export default function Home() {
       
       {/* Book a Meeting - Bottom Right */}
       <motion.div 
-        className="fixed bottom-20 sm:bottom-6 right-3 sm:right-6 z-40 w-auto sm:max-w-none text-right"
+        className="fixed bottom-6 right-6 z-40 w-auto sm:max-w-none text-right"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 2.7 }}

@@ -88,9 +88,10 @@ export function DockNavigation() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.5, type: 'spring', stiffness: 300, damping: 25 }}
-    >      <nav className="dock-navigation w-full overflow-x-auto px-1 max-w-[98vw]">
+    >
+      <nav className="dock-navigation w-full overflow-x-auto">
         <motion.ul 
-          className="flex space-x-1.5 sm:space-x-4 px-2 sm:px-5 py-2 sm:py-3.5 bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-800/50 min-w-fit mx-auto"
+          className="flex space-x-2 sm:space-x-4 px-3 sm:px-5 py-3 sm:py-3.5 bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-800/50 min-w-fit"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.9 }}
