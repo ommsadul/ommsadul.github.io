@@ -23,9 +23,8 @@ export default function Experience() {
   };
   
   return (
-    <>
-      {/* Experience Title - Top Left (Same position as homepage) */}      <motion.nav
-        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
+    <>      {/* Experience Title - Top Left (Same position as homepage) - Hidden on mobile */}      <motion.nav
+        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none hidden sm:block"
         variants={navContainer}
         initial="hidden"
         animate="show"

@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ThemeToggle } from '../components/ThemeToggle';
 
-export default function Home() {
-  const [mounted, setMounted] = useState(false);
+export default function Home() {  const [mounted, setMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Prevent hydration mismatch with window object
   useEffect(() => {
@@ -38,32 +38,58 @@ export default function Home() {
         variants={navContainer}
         initial="hidden"
         animate="show"
-      >        {/* Mobile Top Navigation - Single line */}
-        <div className="sm:hidden w-full px-1 py-3 bg-white/80 dark:bg-black/80 backdrop-blur-sm flex items-center justify-between overflow-x-auto">
-          <div className="flex items-center space-x-3 text-[10px] overflow-visible whitespace-nowrap">
-            <Link href="/experience" className="min-w-fit">
-              experience
-            </Link>
-            <Link href="/projects" className="min-w-fit">
-              projects
-            </Link>
-            <Link href="/publications" className="min-w-fit">
-              research publications
-            </Link>
-            <Link href="/mlblogs" className="min-w-fit">
-              blogs
-            </Link>
-            <Link href="/awards" className="min-w-fit">
-              awards
-            </Link>
-          </div>          {/* Theme toggle in mobile nav */}
-          <div className="flex-shrink-0 ml-2 scale-[0.8] origin-right">
+      >        {/* Mobile Top Navigation with toggle */}        <div className="sm:hidden w-full px-1 py-3 bg-white/80 dark:bg-black/80 backdrop-blur-sm flex items-center justify-between">
+          <div className="flex items-center">
+            <motion.button
+              className="p-2 text-[12px] tracking-tight"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 400, damping: 15 }
+              }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? 'close' : 'hire me'}
+            </motion.button>
+            
+            {/* Mobile dropdown menu */}
+            <AnimatePresence>
+              {mobileMenuOpen && (
+                <motion.div 
+                  className="absolute top-12 left-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-md z-50 py-2 px-3"
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.2 }}
+                 >                  <div className="flex flex-col space-y-3 text-[10px]">                    <Link href="/experience" className="min-w-fit border-0" onClick={() => setMobileMenuOpen(false)}>
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">experience</span>
+                    </Link>
+                    <Link href="/projects" className="min-w-fit border-0" onClick={() => setMobileMenuOpen(false)}>
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">projects</span>
+                    </Link>
+                    <Link href="/publications" className="min-w-fit border-0" onClick={() => setMobileMenuOpen(false)}>
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">research publications</span>
+                    </Link>
+                    <Link href="/mlblogs" className="min-w-fit border-0" onClick={() => setMobileMenuOpen(false)}>
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">blogs</span>
+                    </Link>
+                    <Link href="/awards" className="min-w-fit border-0" onClick={() => setMobileMenuOpen(false)}>
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">awards</span>
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          
+          {/* Theme toggle in mobile nav */}
+          <div className="flex-shrink-0 ml-2 scale-[1] origin-right">
             {mounted && <ThemeToggle />}
           </div>
         </div>
         
-        {/* Desktop Navigation - Original layout */}
-        <motion.ul className="hidden sm:flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
+        {/* Desktop Navigation - Original layout */}        <motion.ul className="hidden sm:flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
           <motion.li variants={navItem} className="mb-1">
             <Link href="/experience" className="text-xs sm:text-sm">
               experience
@@ -90,14 +116,17 @@ export default function Home() {
             </Link>
           </motion.li>
         </motion.ul>
-      </motion.nav>
-      {/* Main Content - Center */}      <motion.div
-        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-full flex flex-col items-center justify-center"
+      </motion.nav>      {/* Main Content - Center - Optimized for mobile */}      <motion.div
+        className="text-center z-10 relative px-4 sm:px-0 w-full max-w-full flex flex-col items-center justify-center pt-14 pb-14 sm:pt-0 sm:pb-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.8 }} // Faster appearance after intro animation
+        style={{
+          minHeight: "calc(100vh - 80px)",
+          height: "auto"
+        }}
       >
-        <motion.div className="mb-8 overflow-visible flex justify-center items-center">          <motion.h1            className="text-[2.5rem] sm:text-6xl md:text-7xl font-normal tracking-tight w-auto mx-auto px-2"
+        <motion.div className="mb-2 sm:mb-8 overflow-visible flex justify-center items-center">          <motion.h1            className="text-[1.8rem] sm:text-6xl md:text-7xl font-normal tracking-tight w-auto mx-auto px-2"
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}  
             transition={{ 
@@ -106,7 +135,7 @@ export default function Home() {
               damping: 20,
               delay: 0.9
             }}
-          >            <div className="whitespace-nowrap overflow-visible w-auto inline-block relative scale-[0.9] sm:scale-100">
+          ><div className="whitespace-nowrap overflow-visible w-auto inline-block relative scale-[1.1] sm:scale-100">
               <motion.span 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -121,8 +150,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 1.6 }}
               />
             </div>
-          </motion.h1>        </motion.div>        {/* Redesigned Summary Section - Experience-like Format */}        <motion.div 
-          className="w-full mx-auto mt-8 px-0 sm:px-0 md:px-0 flex justify-center"
+          </motion.h1>        </motion.div>        {/* Redesigned Summary Section - Experience-like Format - Mobile optimized */}        <motion.div 
+          className="w-full mx-auto mt-1 sm:mt-8 px-1.5 sm:px-0 md:px-0 flex justify-center"
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ 
@@ -136,7 +165,7 @@ export default function Home() {
             className="text-left max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.5 }}          >            <motion.div className="space-y-3 flex flex-col items-center">              <motion.p 
+            transition={{ duration: 0.5, delay: 1.5 }}          >            <motion.div className="space-y-1 sm:space-y-3 flex flex-col items-center"><motion.p 
                 className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -182,41 +211,73 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>      {/* Mobile-optimized Footer */}
-      <motion.div 
+      </motion.div>      {/* Mobile-optimized Footer */}      <motion.div 
         className="fixed bottom-0 left-0 right-0 z-40 sm:static sm:bottom-auto sm:left-auto sm:right-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 2.6 }}
-      >        {/* Mobile Footer - Single line */}
-        <div className="sm:hidden w-full px-1 py-3 bg-white/80 dark:bg-black/80 backdrop-blur-sm flex items-center overflow-x-auto">
-          {/* All social links in one scrollable row */}
-          <div className="flex items-center space-x-2 text-[10px] overflow-visible whitespace-nowrap flex-shrink-0 pr-2">
-            <a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer" className="min-w-fit">
-              github
-            </a>
-            <a href="https://x.com/sadulom13" target="_blank" rel="noopener noreferrer" className="min-w-fit">
-              x
-            </a>
-            <a href="https://scholar.google.com/citations?hl=en&user=RNrHfXMAAAAJ" target="_blank" rel="noopener noreferrer" className="min-w-fit">
-              google scholar
-            </a>
-            <a href="https://www.linkedin.com/in/omm-sadul-706515227/" target="_blank" rel="noopener noreferrer" className="min-w-fit">
-              linkedin
-            </a>
-            <a href="mailto:omssadul@gmail.com" className="min-w-fit">
-              email
-            </a>
-            <a href="https://medium.com/@omssadul" target="_blank" rel="noopener noreferrer" className="min-w-fit">
-              medium
-            </a>
-          </div>
-          
-          {/* Right side - Book meeting */}
-          <div className="text-right flex-shrink-0 ml-auto">
-            <a href="https://cal.com/ommsadul/10min?user=ommsadul" target="_blank" rel="noopener noreferrer" className="text-[10px] min-w-fit">
+      >        {/* Mobile Footer - Single line with toggle - aligned with top bar */}        <div className="sm:hidden w-full px-1 py-3 bg-white/80 dark:bg-black/80 backdrop-blur-sm flex items-center justify-between">
+          {/* Social links toggle button */}
+          <div className="flex items-center">
+            <motion.button
+              className="p-2 text-[12px] tracking-tight"
+              onClick={() => setActiveLink(activeLink === 'socials' ? null : 'socials')}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 400, damping: 15 }
+              }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle social links"
+            >
+              {activeLink === 'socials' ? 'close' : 'socials'}
+            </motion.button>
+            
+            {/* Mobile social links dropdown */}
+            <AnimatePresence>
+              {activeLink === 'socials' && (                <motion.div 
+                  className="absolute bottom-12 left-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-md z-50 py-2 px-3"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="flex flex-col space-y-3 text-[10px]">
+                    <a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">github</span>
+                    </a>
+                    <a href="https://x.com/sadulom13" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">x</span>
+                    </a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=RNrHfXMAAAAJ" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">google scholar</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/omm-sadul-706515227/" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">linkedin</span>
+                    </a>
+                    <a href="mailto:omssadul@gmail.com" className="min-w-fit border-0">
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">email</span>
+                    </a>
+                    <a href="https://medium.com/@omssadul" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
+                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">medium</span>
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>          </div>            {/* Book meeting - positioned exactly like theme toggle */}
+          <div className="flex-shrink-0 ml-2 scale-[1.2] origin-right">
+            <motion.a 
+              href="https://cal.com/ommsadul/10min?user=ommsadul" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block p-2 text-[10px] border-0"
+              whileHover={{ 
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 400, damping: 15 }
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
               book a meeting
-            </a>
+            </motion.a>
           </div>
         </div>
         

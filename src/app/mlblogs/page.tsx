@@ -22,8 +22,8 @@ export default function MLBlogsPage() {
   const navItem = {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
-  };    return (    <>      {/* Blogs Title - Exact same position as in homepage navigation */}        <motion.nav
-        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
+  };    return (    <>      {/* Blogs Title - Hidden on mobile, visible on larger screens */}        <motion.nav
+        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none hidden sm:block"
         variants={navContainer}
         initial="hidden"
         animate="show"

@@ -23,12 +23,12 @@ export default function Publications() {
   };
   
   return (
-    <>      {/* Publications Title - Exact same position as in homepage navigation */}      <motion.nav
-        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none"
+    <>      {/* Publications Title - Hidden on mobile, visible on larger screens */}      <motion.nav
+        className="fixed top-6 left-6 z-40 w-[40vw] sm:max-w-none hidden sm:block"
         variants={navContainer}
         initial="hidden"
         animate="show"
-      >        <motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
+      ><motion.ul className="flex flex-wrap gap-y-1 gap-x-2 sm:space-x-4 text-2xs sm:text-xs md:text-sm">
           <motion.li variants={navItem} className="mb-1 opacity-0 invisible">
             <Link href="/experience" className="text-xs sm:text-sm">
               experience
