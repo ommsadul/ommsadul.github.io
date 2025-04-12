@@ -24,7 +24,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="description" content="Portfolio of Omm Sadul - Mechanical Engineering Student specializing in computational medicine and prediction algorithms" />
       </head>      <body className={mono.className}>
-        <ThemeProvider>          <div className="relative min-h-screen flex flex-col items-center">            <div className="fixed top-5 right-6 z-50 flex items-center gap-x-5">              {/* Title removed as requested */}
+        <ThemeProvider>          <div className="relative min-h-screen flex flex-col items-center">            <div className="fixed top-5 right-6 z-50 hidden sm:flex items-center gap-x-5">              {/* Title removed as requested */}
               <ThemeToggle />
             </div><motion.div
               className={`${isHomePage ? 'content-wrapper-home' : 'content-wrapper'}`}
