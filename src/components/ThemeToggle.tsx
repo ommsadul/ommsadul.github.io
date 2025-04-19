@@ -5,11 +5,12 @@ import { motion } from 'framer-motion';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  
+
   return (
     <motion.button
       className="theme-toggle p-2 sm:p-3"
-      onClick={toggleTheme}      whileHover={{ 
+      onClick={toggleTheme}
+      whileHover={{ 
         scale: 1.05,
         transition: { type: "spring", stiffness: 400, damping: 15 }
       }}
@@ -25,6 +26,10 @@ export function ThemeToggle() {
         }
       }}
       transition={{ duration: 0.5 }}
+      style={{
+        WebkitTapHighlightColor: 'transparent', // Prevents tap highlight on mobile
+        touchAction: 'manipulation' // Ensures smooth interaction on mobile
+      }}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === 'light' ? 'dark' : 'light'}

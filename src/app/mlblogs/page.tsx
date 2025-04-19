@@ -118,8 +118,24 @@ export default function MLBlogsPage() {
           >
             <h2 className="text-base font-medium mb-2">A Survival Guide for Tier-3 Mechanical Engineering Undergraduates</h2>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">coming soon</p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 text-justify">
             This guide discusses effective strategies to navigate various challenges, including misconceptions about mech careers, outdated curriculum, toxic academic environments, lack of proper mentorship, unprofessional behavior and misleading guidance from professors, poor placement opportunities, unmotivated peer groups, and much more.
+            </p>
+            <Link href="https://medium.com/@omssadul" className="text-sm border-b border-dashed border-gray-300 dark:border-gray-700">
+              read more →
+            </Link>
+          </motion.article>
+          {/* Blog 2 */}
+          <motion.article 
+            className="pb-8 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            <h2 className="text-base font-medium mb-2">An Update on my Research Journey</h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">coming soon</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 text-justify">
+            This article chronicles my journey of securing a full scholarship to pursue full-time research at Johns Hopkins University. I'll share insights into the challenges I encountered, the strategies I employed to navigate them successfully, and the invaluable lessons I learned along the way. Additionally, I'll provide practical tips and reflections that may help others aiming for similar opportunities.
             </p>
             <Link href="https://medium.com/@omssadul" className="text-sm border-b border-dashed border-gray-300 dark:border-gray-700">
               read more →
@@ -128,17 +144,24 @@ export default function MLBlogsPage() {
         </div>
       )}      {/* Technical Blogs Section */}
       {activeSection === 'technical' && (
-        <motion.div 
-          className="py-12 rounded-md text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <h2 className="text-xl font-medium mb-4">Coming Soon</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            Technical blogs section is currently under development. Check back later!
-          </p>
-        </motion.div>
+        <div className="space-y-8">
+          {/* Blog 1 */}
+          <motion.article 
+            className="pb-8 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            <h2 className="text-base font-medium mb-2">Module 1</h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">coming soon</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 text-justify">
+            In this introductory module on Molecular Biology, I am engaging with foundational topics that form the basis of modern genomic science. The blog begins with Just Enough Cell Biology, which offers a concise overview of essential cellular structures and their relevance to molecular functions. This is followed by Important Molecules in Molecular Biology, a focused discussion on biomolecules such as DNA, RNA, and proteins that drive genetic mechanisms. The module continues with Molecular Biology Structures, I explore the structural intricacies of nucleic acids and proteins. Finally, From Genes to Phenotypes ties together these concepts by illustrating how genetic information is expressed as observable traits. 
+            </p>
+            <Link href="https://medium.com/@omssadul" className="text-sm border-b border-dashed border-gray-300 dark:border-gray-700">
+              read more →
+            </Link>
+          </motion.article>
+        </div>
       )}
     </>
   );

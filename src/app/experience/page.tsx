@@ -68,7 +68,7 @@ export default function Experience() {
               <span className="block">quality intern @ 2P Technologies</span>          </li>
           <li className="!border-b-0">
             <span className="text-gray-500 dark:text-gray-400">aug 23' - aug 24'</span>
-            <span className="block">undergraduate research scholar @ <a href="https://mitwpu.edu.in/">mit-wpu</a></span>
+            <span className="block">research apprenticeship @ <a href="https://mitwpu.edu.in/">my college</a></span>
           </li>        </ul>
       </Section>
     </>

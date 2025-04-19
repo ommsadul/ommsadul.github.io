@@ -144,7 +144,7 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
               >
                 hey, i am omm sadul
               </motion.span>              <motion.span
-                className="absolute -bottom-2 sm:-bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
+                className="absolute -bottom-2 sm:-bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gray-400 to-transparent dark:from-gray-600"
                 initial={{ scaleX: 0, originX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 1.6 }}
@@ -162,11 +162,12 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
           }}
         >
           <motion.div 
-            className="text-left max-w-xl mx-auto"
+            className="text-left sm:text-justify max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.5 }}          >            <motion.div className="space-y-1 sm:space-y-3 flex flex-col items-center"><motion.p 
-                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
+            transition={{ duration: 0.5, delay: 1.5 }}
+          >            <motion.div className="space-y-1 sm:space-y-3 flex flex-col items-center"><motion.p 
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed text-justify"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 1.6 }}
@@ -175,7 +176,7 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
               </motion.p>
               
               <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed text-justify"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}                
                 transition={{ duration: 0.2, delay: 1.8 }}
@@ -184,7 +185,7 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
               </motion.p>
               
               <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed text-justify"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 2.0 }}
@@ -193,15 +194,16 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
               </motion.p>
               
               <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed text-justify"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 2.2 }}
               >
                 PIs, my SaaS is coming — revolutionary or just ridiculous, you decide.
               </motion.p>
-                <motion.p 
-                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed"
+              
+              <motion.p 
+                className="text-xs sm:text-sm font-light tracking-wider py-0.5 leading-relaxed text-justify"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 2.4 }}
