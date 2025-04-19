@@ -125,21 +125,20 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
           minHeight: "calc(100vh - 80px)",
           height: "auto"
         }}
-      >
-        <motion.div className="mb-2 sm:mb-8 overflow-visible flex justify-center items-center">          <motion.h1            className="text-[1.8rem] sm:text-6xl md:text-7xl font-normal tracking-tight w-auto mx-auto px-2"
+      >      <motion.div className="mb-2 sm:mb-8 overflow-visible flex justify-center items-center">          <motion.h1            className="text-[1.8rem] sm:text-6xl md:text-7xl font-normal tracking-tight w-auto mx-auto px-2"
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}  
             transition={{ 
               type: "spring", 
               stiffness: 100, 
               damping: 20,
-              delay: 0.9
+              delay: 0.5
             }}
           ><div className="whitespace-nowrap overflow-visible w-auto inline-block relative scale-[1.1] sm:scale-100">
               <motion.span 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 1.2 }}
+                transition={{ duration: 0.4, delay: 0.7 }}
                 className="inline-block"
               >
                 hey, i am omm sadul
