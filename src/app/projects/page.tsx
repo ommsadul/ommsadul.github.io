@@ -117,7 +117,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.3, delay: 0.1 }}
           >
             <h2 className="text-base font-medium mb-2">Cost Optimization of Biomedical Device for Healthcare Efficiency</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 text-justify">
             Developing a portable ventilator for home use, which automatically enhances the oxygen flow rate when mask leaks are detected,
             while maintaining cost efficiency without compromising performance or safety. This research project focuses on developing the
             necessary computational models.
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.3, delay: 0.2 }}
           >
             <h2 className="text-base font-medium mb-2">Design and Analysis of an Innovative Medical Autoclave</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 text-justify">
             Won first prize in a poster presentation, applied for a patent, and led the design and analysis of an innovative autoclave, improving
             sterilization efficacy, efficiency, and sustainability through significant advancements.
             </p>
