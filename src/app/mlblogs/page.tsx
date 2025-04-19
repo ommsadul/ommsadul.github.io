@@ -105,13 +105,12 @@ export default function MLBlogsPage() {
           Technical Blogs
         </button>
       </motion.div>
-      
-      {/* Guide Blogs Section */}
+        {/* Guide Blogs Section */}
       {activeSection === 'guide' && (
         <div className="space-y-8">
           {/* Blog 1 */}
           <motion.article 
-            className="pb-8 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900"
+            className="border-b border-dashed border-gray-200 dark:border-gray-800 pb-8 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.1 }}
