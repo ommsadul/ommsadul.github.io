@@ -180,7 +180,7 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
                 animate={{ opacity: 1, y: 0 }}                
                 transition={{ duration: 0.2, delay: 1.8 }}
               >
-                I mess with predictive ML and computational medicine, plus dabble in open-source and cryptography - because who doesnt love bounties?
+                I mess with predictive ML and fullstack dev, plus dabble in open-source and cryptography - because who doesnt love bounties?
               </motion.p>
               
               <motion.p 
@@ -243,9 +243,6 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
                   transition={{ duration: 0.2 }}
                 >
                   <div className="flex flex-col space-y-3 text-[10px]">
-                    <a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
-                      <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">github</span>
-                    </a>
                     <a href="https://x.com/sadulom13" target="_blank" rel="noopener noreferrer" className="min-w-fit border-0">
                       <span className="relative inline-block w-fit border-b border-dashed border-gray-400 dark:border-gray-600">x</span>
                     </a>
@@ -296,11 +293,6 @@ export default function Home() {  const [mounted, setMounted] = useState(false);
               initial="hidden"
               animate="show"
             >
-              <motion.li variants={navItem}>
-                <a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer" className="text-sm">
-                  github
-                </a>
-              </motion.li>
               <motion.li variants={navItem}>
                 <a href="https://x.com/sadulom13" target="_blank" rel="noopener noreferrer" className="text-sm">
                   x

@@ -76,12 +76,20 @@ export default function Awards() {
       </div>
         <Section index={0}>
         <div className="highlight">
-          <p>
+          <p className="text-justify">
             <strong>Johns Hopkins University Fellowship</strong> - Awarded a full scholarship to conduct research throughout my senior year.
           </p>
         </div>
       </Section>
       
+      <Section index={1}>
+        <div className="highlight">
+          <p className="text-justify">
+            <strong>Dean's Master's Fellowship</strong> - Awarded a merit-based scholarship that covers 50% tuition for my Master of Science in Systems Engineering program at the Johns Hopkins University.
+          </p>
+        </div>
+      </Section>
+
       <motion.div 
         className="mt-6 text-sm text-gray-500 dark:text-gray-400"
         initial={{ opacity: 0 }}
