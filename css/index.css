@@ -1,0 +1,200 @@
+body {
+    background-color: white;
+    font-family: 'Neue Haas Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.sections {
+    margin-right: 200px;
+    margin-left: 9%;
+    margin-top: 90px;
+    vertical-align: top;
+    display: inline-block;
+    color: #696969; 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 0.8;
+    text-align: justify;
+}
+
+.sections p.active {
+    color: #000000;
+}
+
+.sections p:first-child {
+    color: #000000;
+}
+
+.sections a {
+    color: #696969;
+    text-decoration: none;
+}
+
+.sections a:hover {
+    color: #404040;
+}
+
+.About {
+    display: inline-block;
+    margin-top: 90px;
+    margin-left: -1%;
+    margin-right: 9%; 
+    max-width: 650px;
+    color: #696969; 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+.About p, .About ul {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.About a {
+    color: black;
+    text-decoration: none;
+}
+
+.About a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 440px;
+    margin-left: 9%;
+    margin-right: 9%;
+    display: flex;
+    justify-content: space-between;
+    color: #696969; 
+    font-weight: 400;
+    font-size: 14px;
+    padding: 70px 0;
+}
+
+.leftsideoffooter {
+    text-align: left;
+    display: flex;
+    gap: 50px;
+}
+
+.socials {
+    text-align: right;
+    display: flex;
+    gap: 20px;
+}
+
+.socials a {
+    color: #696969;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: #000000;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sections {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 40px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        line-height: normal;
+    }
+
+    .sections p {
+        margin: 0;
+    }
+
+    .About {
+        display: block !important;
+        margin: 40px 5% 20px 5% !important;
+        max-width: 100% !important;
+        font-size: 14px;
+    }
+
+    /* Stack text and video divs vertically */
+    .About > div {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .About > div:first-child {
+        margin-bottom: 30px !important;
+    }
+
+    /* Target the video div that comes after .About */
+    .About + div {
+        display: block !important;
+        width: 90% !important;
+        margin: 30px 5% !important;
+    }
+
+    .About + div video,
+    .About video {
+        width: 100% !important;
+        display: block;
+    }
+
+    footer {
+        position: relative;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+        gap: 20px;
+        font-size: 12px;
+        padding: 20px 0;
+        background-color: white;
+    }
+
+    /* Different footer margins for each page */
+    .home-page footer {
+        margin-top: 50px;
+    }
+
+    .awards-page footer {
+        margin-top: 540px;
+    }
+
+    .projects-page footer {
+        margin-top: 501px;
+    }
+
+    .research-page footer {
+        margin-top: 540px;
+    }
+
+    .leftsideoffooter {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .socials {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sections {
+        font-size: 11px;
+        gap: 10px;
+    }
+
+    .About {
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 11px;
+    }
+}
