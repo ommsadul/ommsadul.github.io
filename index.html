@@ -14,7 +14,7 @@
         <p>About</p> 
         <p><a href="pages/awards.html">Awards</a></p>
         <p><a href="pages/projects.html">Projects</a></p>
-		<p><a href="pages/researchpublications.html">Research Publications</a></p>
+        <p><a href="pages/researchpublications.html">Research Publications</a></p>
     </div>
 
     <div class = "About">
@@ -25,19 +25,31 @@
             <li> Joining a startup where I can do the best work of my life with a team that will be remembered for decades. </li>
             <li>  I'm really into the idea of joining a robotics lab - especially one working on humanoid robotics, haptics, or some cool interdisciplinary niche around that. </li>
         </ul>
-        <p>Prior to all of this, I was a <a href="https://engineering.jhu.edu/admissions/graduate-admissions/heep/" target="_blank" rel="noopener noreferrer">HEEP Fellow</a> during the summer of 2024 at Johns Hopkins University. After that, I worked as a senior undergraduate research scholar in the Department of <a href="https://systems.jhu.edu/kimia/" target="_blank" rel="noopener noreferrer">CASE</a>, collaborating with the Optimal Lab under the supervision of <a href="https://systems.jhu.edu/kimia/" target="_blank" rel="noopener noreferrer">Dr. Kimia Ghobadi</a>.</p>  
-        
+        <p>Prior to all of this, I was a <a href="https://engineering.jhu.edu/admissions/graduate-admissions/heep/">HEEP Fellow</a> during the summer of 2024 at <span class="jhu-trigger" style="cursor: pointer; color: black;">Johns Hopkins University</span>. After that, I worked as a senior undergraduate research scholar in the Department of <a href="https://engineering.jhu.edu/case/" target="_blank" rel="noopener noreferrer">CASE</a>, collaborating with the Optimal Lab under the supervision of <a href="https://systems.jhu.edu/kimia/" target="_blank" rel="noopener noreferrer">Dr. Kimia Ghobadi</a>.</p>
     </div>
 
-    <div style="display: inline-block; width: 34%; vertical-align: top; margin-top: -450px; margin-left: 65%;">
+    <!-- Video Container -->
+    <div id="video-container" style="position: fixed; top: 20px; right: 3%; width: 600px;">
         <video autoplay muted loop playsinline style="width: 100%;">
             <source src="assets/tree.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
+    <!-- JHU Images Container (Hidden by default) -->
+    <div id="jhu-images" style="position: fixed; top: 120px; right: 5%; width: 600px; display: none;">
+        <p style="color: #696969; font-size: 14px; margin-bottom: 15px; text-align: justify;">
+            The Home-Wood campus of Johns Hopkins University, Baltimore, MD. I have found myself clicking some good pictures lately. These are two of my favorite pictures from the set. 
+        </p>
+        <div style="display: flex; flex-direction: row; gap: 20px;">
+            <img src="assets/jh2.jpeg" alt="Johns Hopkins 1" style="width: 50%; border-radius: 8px;">
+            <img src="assets/jh2.jpg" alt="Johns Hopkins 2" style="width: 50%; border-radius: 8px;">
+        </div>
+    </div>
+
     <footer>
         <div class = "leftsideoffooter">
+            <span><a href="pages/nyc.html" class="nyc-footer-link">NYC</a></span>
             <span>Made on Earth</span>
             <span>It's <span id="current-time"></span> for Omm</span>
         </div>
@@ -48,10 +60,13 @@
             <span><a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer">Github</a></span>
             <span><a href="https://scholar.google.com/citations?user=omm" target="_blank" rel="noopener noreferrer">Google Scholar</a></span>
             <span><a href="mailto:omssadul@gmail.com" target="_blank" rel="noopener noreferrer">Email</a></span>
-            <span><a href="https://cal.com/ommsadul" target="_blank" rel="noopener noreferrer">Book a Meeting</a></span>
+            <span><a href="https://cal.com/ommsadul" target="_blank" rel="noopener noreferrer">Book a Meet</a></span>
         </div>
     </footer>
 
     <script src="js/time.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/toggleimages.js"></script>
 
 </body>
+</html>
