@@ -15,11 +15,11 @@
                 if (isImagesShowing) {
                     // Hide images, show video
                     if (jhuImages) jhuImages.style.display = 'none';
-                    if (videoContainer) videoContainer.style.display = 'block';
+                    if (videoContainer) videoContainer.style.visibility = 'visible';
                     isImagesShowing = false;
                 } else {
                     // Hide video, show images
-                    if (videoContainer) videoContainer.style.display = 'none';
+                    if (videoContainer) videoContainer.style.visibility = 'hidden';
                     if (jhuImages) jhuImages.style.display = 'block';
                     isImagesShowing = true;
                 }
