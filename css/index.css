@@ -583,6 +583,10 @@ footer {
         margin: 20px 5% -350px 5% !important;
         max-width: 90% !important;
     }
+
+    #nyc-photos p {
+        font-size: 12px !important;
+    }
     
     /* Video - relative positioning on mobile */
     #video-container {
