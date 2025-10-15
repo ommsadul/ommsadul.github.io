@@ -551,7 +551,7 @@ footer {
         gap: 15px;
         
         margin: 40px 5% 0;
-        font-size: 12px;
+        font-size: 11px;
         line-height: normal;
         max-width: 100%;
     }
@@ -568,7 +568,7 @@ footer {
         display: block !important;
         margin: 40px 0 50px 0 !important;
         max-width: 100% !important;
-        font-size: 13px;
+        font-size: 12px;
     }
     
     /* Adjust standalone About sections for mobile */
@@ -678,7 +678,7 @@ footer {
         padding: 20px 0;
         gap: 20px;
         
-        font-size: 12px;
+        font-size: 11px;
         background-color: #ffffff;
     }
     
