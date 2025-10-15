@@ -208,7 +208,7 @@ footer {
     align-items: center;
     flex-wrap: nowrap; /* PREVENTS WRAPPING */
     
-    margin-top: 240px;
+    margin-top: 280px;
     margin-left: 9%;
     margin-right: 9%;
     margin-bottom: 0px;
@@ -334,7 +334,7 @@ footer {
 .projects-page .About,
 .research-page .About,
 .nyc-page .About {
-    margin-bottom: -137px; /* Don't let content grow */
+    margin-bottom: -171px; /* Don't let content grow */
 }
 
 
@@ -574,9 +574,13 @@ footer {
     /* Adjust standalone About sections for mobile */
     .awards-page .About,
     .projects-page .About,
-    .research-page .About,
-    .nyc-page .About {
+    .research-page .About {
         margin: 20px 5% 50px 5% !important;
+        max-width: 90% !important;
+    }
+
+    .nyc-page .About {
+        margin: 20px 5% -350px 5% !important;
         max-width: 90% !important;
     }
     
@@ -612,11 +616,11 @@ footer {
     /* NYC Photos - stack vertically */
     #nyc-photos {
         position: relative !important;
-        top: auto !important;
-        right: auto !important;
+        top: 0 !important;
+        right: 0 !important;
         
         width: 90% !important;
-        margin: -280px 5% -10px !important;
+        margin: 20px 5% 20px !important;
     }
     
     #nyc-photos > div {
@@ -700,7 +704,7 @@ footer {
     }
     
     .nyc-page footer {
-        margin-top: -40px;
+        margin-top: 360px;
     }
     
     .nyc-page footer.photos-visible {
