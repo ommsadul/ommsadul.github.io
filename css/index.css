@@ -334,7 +334,7 @@ footer {
 .projects-page .About,
 .research-page .About,
 .nyc-page .About {
-    flex-grow: 0; /* Don't let content grow */
+    margin-bottom: -137px; /* Don't let content grow */
 }
 
 
