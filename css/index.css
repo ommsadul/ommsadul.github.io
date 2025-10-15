@@ -208,10 +208,10 @@ footer {
     align-items: center;
     flex-wrap: nowrap; /* PREVENTS WRAPPING */
     
-    margin-top: auto;
+    margin-top: 240px;
     margin-left: 9%;
     margin-right: 9%;
-    margin-bottom: 99px;
+    margin-bottom: 0px;
     padding: 0;
     
     font-size: 14px;
