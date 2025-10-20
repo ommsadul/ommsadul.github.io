@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../assets/1f4ac.svg">
     <title>NYC - Omm Sadul</title>
-    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet">
 </head>
 
 <body class="nyc-page">
-    <div class = "sections">
-        <p><a href="../index.html">About</a></p> 
+    <nav class="sections">
+        <p><a href="../index.html">About</a></p>
         <p><a href="awards.html">Awards</a></p>
         <p><a href="projects.html">Projects</a></p>
         <p><a href="researchpublications.html">Research Publications</a></p>
-    </div>
+    </nav>
 
-    <div class = "About">
-        <p>I was born and raised in India, but I moved to America at 21 for work and education. It still feels surreal, unbelievable and crazy that someone actually flew me out to work in the states. Since then, I've had the chance to visit some incredible places, and one of the most memorable was New York City. I took <span class="nyc-photos-trigger" style="cursor: pointer; color: black;">amazing photos during my visit</span>, and ever since, I've felt that spending my twenties in New York would be an incredible experience.</p>
+    <section class="About">
+        <p>I was born and raised in India, but I moved to America at 21 for work and education. It still feels surreal, unbelievable and crazy that someone actually flew me out to work in the states. Since then, I've had the chance to visit some incredible places, and one of the most memorable was New York City. I took <span class="nyc-photos-trigger">amazing photos during my visit</span>, and ever since, I've felt that spending my twenties in New York would be an incredible experience.</p>
         <p>To keep track of my journey towards this goal, I've created a progress bar below.</p>
         
         <div class="progress-wrapper">
             <div class="progress-container">
                 <div class="progress-bar" id="nyc-progress"></div>
             </div>
-            <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+            <div class="progress-info">
                 <p class="progress-text" id="progress-text">Month 0 of 35</p>
                 <span class="progress-deadline">NYC move-in deadline</span>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- NYC Photos Container (Hidden by default) -->
-    <div id="nyc-photos" style="position: fixed; top: 120px; right: 5%; width: 600px; display: none;">
-        <p style="color: #696969; font-size: 14px; margin-bottom: 15px; text-align: justify;">
-            Some of my favorite shots from New York City - the energy, the architecture, and the dreams. First image is taken during the roosvelt island ferry ride, and the second one is a view of Lower Manhattan skyline.
-        </p>
-        <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-            <img src="../assets/nyc1.jpg" alt="NYC Photo 1" style="width: 100%; border-radius: 8px;">
-            <img src="../assets/nyc2.jpg" alt="NYC Photo 2" style="width: 70%; border-radius: 8px;">
+    <div id="nyc-photos">
+        <p>Some of my favorite shots from New York City - the energy, the architecture, and the dreams. First image is taken during the Roosevelt Island ferry ride, and the second one is a view of Lower Manhattan skyline.</p>
+        <div class="image-grid">
+            <img src="../assets/nyc1.jpg" alt="NYC view from Roosevelt Island ferry">
+            <img src="../assets/nyc2.jpg" alt="Lower Manhattan skyline">
         </div>
     </div>
- 
+
     <footer>
-        <div class = "leftsideoffooter">
+        <div class="leftsideoffooter">
             <span><a href="nyc.html" class="nyc-footer-link">NYC</a></span>
             <span>Made on Earth</span>
             <span>It's <span id="current-time"></span> for Omm</span>
         </div>
 
-        <div class = "socials">
+        <div class="socials">
             <span><a href="https://x.com/ommsadul" target="_blank" rel="noopener noreferrer">X</a></span>
             <span><a href="https://www.linkedin.com/in/omm-sadul-706515227" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
             <span><a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer">Github</a></span>
             <span><a href="https://scholar.google.com/citations?user=omm" target="_blank" rel="noopener noreferrer">Google Scholar</a></span>
-            <span><a href="mailto:omssadul@gmail.com" target="_blank" rel="noopener noreferrer">Email</a></span>
+            <span><a href="mailto:omssadul@gmail.com">Email</a></span>
             <span><a href="https://cal.com/ommsadul" target="_blank" rel="noopener noreferrer">Book a Meet</a></span>
         </div>
     </footer>
@@ -63,6 +59,5 @@
     <script src="../js/time.js"></script>
     <script src="../js/progress.js"></script>
     <script src="../js/togglenycphotos.js"></script>
-
 </body>
 </html>

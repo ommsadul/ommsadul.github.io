@@ -6,7 +6,6 @@
         const jhuTriggers = document.querySelectorAll('.jhu-trigger');
         const videoContainer = document.getElementById('video-container');
         const jhuImages = document.getElementById('jhu-images');
-        
         let isImagesShowing = false;
         
         // Toggle between images and video

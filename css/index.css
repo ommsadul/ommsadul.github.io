@@ -4,26 +4,22 @@
    
    Table of Contents:
    1. Global Styles & Reset
-   2. Navigation (Sections)
+   2. Navigation
    3. Main Content & Layout
    4. Footer
    5. Interactive Elements
-   6. Media Queries (Responsive Design)
+   6. Media Queries
    ======================================== */
-
-
 
 /* ========================================
    1. GLOBAL STYLES & RESET
    ======================================== */
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     background-color: #ffffff;
@@ -36,12 +32,9 @@ body {
     flex-direction: column;
 }
 
-
-
 /* ========================================
-   2. NAVIGATION SIDEBAR (SECTIONS)
+   2. NAVIGATION
    ======================================== */
-
 
 .sections {
     display: inline-block;
@@ -49,24 +42,20 @@ body {
     max-width: 200px;
     vertical-align: top;
     position: relative;
-    z-index: 200; /* Ensure navigation is above overlays */
-    
+    z-index: 200;
     font-size: 13px;
     line-height: 1.6;
     color: #696969;
 }
 
-
 .sections p {
     margin: 0;
 }
-
 
 .sections p:first-child,
 .sections p.active {
     color: #000000;
 }
-
 
 .sections a {
     color: #696969;
@@ -74,32 +63,24 @@ body {
     transition: color 0.2s ease;
 }
 
-
 .sections a:hover {
     color: #404040;
 }
-
-
 
 /* ========================================
    3. MAIN CONTENT & LAYOUT
    ======================================== */
 
-
-/* Homepage Grid Layout */
 .main-grid {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 60px;
     align-items: start;
-    
     max-width: 1600px;
     margin: -70px 9% 0;
     padding-left: 250px;
 }
 
-
-/* Content Section */
 .About {
     max-width: 650px;
     font-size: 16px;
@@ -107,16 +88,13 @@ body {
     color: #696969;
 }
 
-
-/* Apply proper spacing for standalone About sections (non-home pages) */
 .awards-page .About,
 .projects-page .About,
 .research-page .About,
 .nyc-page .About {
     margin: -70px 25% 0;
-    min-height: calc(100vh - 300px); /* Ensures consistent footer position at bottom */
+    min-height: calc(100vh - 300px);
 }
-
 
 .About p,
 .About ul {
@@ -124,11 +102,9 @@ body {
     text-align: justify;
 }
 
-
 .About ul {
     padding-left: 40px;
 }
-
 
 .About a {
     color: #000000;
@@ -136,48 +112,54 @@ body {
     transition: text-decoration 0.2s ease;
 }
 
-
 .About a:hover {
     text-decoration: underline;
 }
 
-
-/* Video Container (Homepage) */
 #video-container {
     width: 100%;
-    max-width: 650px; /* Increase this value to make video larger */
-    min-width: 600px; /* Decrease this value to allow video to be smaller */
+    max-width: 650px;
+    min-width: 600px;
     margin-right: -90px;
     margin-top: -80px;
 }
-
 
 #video-container video {
     width: 100%;
     display: block;
 }
 
-
-/* JHU Images (Fixed Overlay) */
 #jhu-images {
     position: fixed;
-    top: 10px;
+    top: 120px;
     right: 5%;
-    width: 550px;
-    max-width: 550px;
+    width: 600px;
+    max-width: 600px;
     z-index: 100;
-    pointer-events: none; /* Images don't block clicks */
+    pointer-events: none;
+    display: none;
 }
 
-
-#jhu-images img,
-#jhu-images p,
-#jhu-images div {
-    pointer-events: auto; /* But content is clickable */
+#jhu-images p {
+    color: #696969;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: justify;
+    pointer-events: auto;
 }
 
+#jhu-images .image-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    pointer-events: auto;
+}
 
-/* NYC Photos (Fixed Overlay) */
+#jhu-images img {
+    width: 50%;
+    border-radius: 8px;
+}
+
 #nyc-photos {
     position: fixed;
     top: 120px;
@@ -186,39 +168,55 @@ body {
     max-width: 600px;
     z-index: 100;
     pointer-events: none;
+    display: none;
 }
 
-
-#nyc-photos img,
-#nyc-photos p,
-#nyc-photos div {
+#nyc-photos p {
+    color: #696969;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: justify;
     pointer-events: auto;
 }
 
+#nyc-photos .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    pointer-events: auto;
+}
 
+#nyc-photos img {
+    border-radius: 8px;
+}
+
+#nyc-photos img:first-child {
+    width: 100%;
+}
+
+#nyc-photos img:last-child {
+    width: 70%;
+}
 
 /* ========================================
    4. FOOTER
    ======================================== */
 
-
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* PREVENTS WRAPPING */
-    
+    flex-wrap: nowrap;
     margin-top: 280px;
     margin-left: 9%;
     margin-right: 9%;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding: 0;
-    
     font-size: 14px;
     color: #696969;
     background-color: transparent;
 }
-
 
 .leftsideoffooter {
     display: flex;
@@ -227,14 +225,12 @@ footer {
     flex-wrap: nowrap;
 }
 
-
 .socials {
     display: flex;
     gap: 20px;
     text-align: right;
     flex-wrap: nowrap;
 }
-
 
 .socials a,
 .nyc-footer-link {
@@ -243,32 +239,29 @@ footer {
     transition: color 0.2s ease;
 }
 
-
 .socials a:hover,
 .nyc-footer-link:hover {
     color: #000000;
 }
 
-
-
 /* ========================================
    5. INTERACTIVE ELEMENTS
    ======================================== */
 
+.jhu-trigger,
+.nyc-photos-trigger {
+    cursor: pointer;
+    color: #000000;
+}
 
-/* Hover Triggers */
 .jhu-trigger:hover,
 .nyc-photos-trigger:hover {
     text-decoration: underline;
-    cursor: pointer;
 }
 
-
-/* Progress Bar (NYC Page) */
 .progress-wrapper {
     margin-top: 20px;
 }
-
 
 .progress-container {
     width: 100%;
@@ -278,7 +271,6 @@ footer {
     overflow: hidden;
 }
 
-
 .progress-bar {
     height: 100%;
     background-color: #4d4d4d;
@@ -286,6 +278,11 @@ footer {
     transition: width 0.5s ease;
 }
 
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
 
 .progress-text,
 .progress-deadline {
@@ -295,66 +292,47 @@ footer {
     margin: 0;
 }
 
-
 .progress-deadline {
     color: #696969;
 }
 
-
-/* NYC Button */
 .nyc-button-container {
     margin: 60px 9% 40px;
 }
 
-
 .nyc-button {
     display: inline-block;
     padding: 10px 24px;
-    
     background-color: #000000;
     color: #ffffff;
-    
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
-    
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
 
 .nyc-button:hover {
     background-color: #333333;
 }
 
-
-/* Page-specific footer consistency - Desktop */
-/* Remove fixed margins, let flexbox handle it with margin-top: auto */
 .awards-page .About,
 .projects-page .About,
 .research-page .About,
 .nyc-page .About {
-    margin-bottom: -171px; /* Don't let content grow */
+    margin-bottom: -171px;
 }
 
-
-/* Ensure content doesn't push footer */
 .sections,
 .main-grid,
 .About {
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
 
-
-
 /* ========================================
-   6. MEDIA QUERIES (RESPONSIVE DESIGN)
+   6. MEDIA QUERIES
    ======================================== */
 
-
-/* ----------------------------------------
-   Large Desktop (1400px+)
-   ---------------------------------------- */
 @media screen and (min-width: 1601px) {
     .main-grid {
         padding-left: 280px;
@@ -371,19 +349,12 @@ footer {
     }
 }
 
-
-
-/* ----------------------------------------
-   Medium Desktop (1201px - 1600px)
-   ---------------------------------------- */
 @media screen and (max-width: 1600px) and (min-width: 1201px) {
-    /* Navigation - Horizontal on medium desktop */    
     .main-grid {
         padding-left: 250px;
         gap: 50px;
     }
     
-    /* Footer adjustments for medium desktop */
     footer {
         font-size: 13px;
     }
@@ -396,39 +367,22 @@ footer {
         gap: 18px;
     }
     
-    /* Adjust JHU/NYC images overlay for medium desktop */
-    #jhu-images {
+    #jhu-images,
+    #nyc-photos {
         width: 380px;
         max-width: 380px;
         top: 120px;
         right: 2%;
     }
     
-    #jhu-images p {
-        font-size: 11px !important;
-        margin-bottom: 8px !important;
-    }
-    
-    #nyc-photos {
-        width: 380px;
-        max-width: 380px;
-        top: 140px;
-        right: 2%;
-    }
-    
+    #jhu-images p,
     #nyc-photos p {
-        font-size: 11px !important;
-        margin-bottom: 8px !important;
+        font-size: 11px;
+        margin-bottom: 8px;
     }
 }
 
-
-
-/* ----------------------------------------
-   Tablet / Small Desktop (481px - 1200px)
-   ---------------------------------------- */
 @media screen and (max-width: 1200px) and (min-width: 481px) {
-    /* Navigation - Horizontal on tablet */
     .sections {
         display: flex;
         flex-direction: row;
@@ -437,223 +391,174 @@ footer {
         max-width: 100%;
     }
     
-    /* Stack grid layout vertically */
     .main-grid {
         grid-template-columns: 1fr;
         justify-items: center;
-        
         padding-left: 0;
         margin: 40px 7% 180px;
     }
     
-    /* Full width content on smaller screens */
     .main-grid .About {
         max-width: 100%;
     }
     
-    /* Adjust standalone About sections */
     .awards-page .About,
     .projects-page .About,
     .research-page .About,
     .nyc-page .About {
-        margin: 30px 7% 0 !important;
-        max-width: 100% !important;
+        margin: 30px 7% 0;
+        max-width: 100%;
     }
     
-    /* Adjust video positioning in stacked layout */
     #video-container {
         width: 100%;
         max-width: 600px;
         min-width: auto;
-        
         margin-top: -80px;
         margin-bottom: -110px;
         margin-right: 0;
     }
     
-    /* Adjust overlay images for tablet - hide fixed overlays, show inline */
-    #jhu-images {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        
-        width: 100% !important;
-        max-width: 600px !important;
-        margin: 30px auto 40px !important;
-        display: none; /* Hidden by default, shown via JS */
-    }
-    
-    #jhu-images.show {
-        display: block !important;
-    }
-    
-    #jhu-images p {
-        font-size: 13px !important;
-        margin-bottom: 12px !important;
-    }
-    
-    #jhu-images > div {
-        gap: 15px !important;
-    }
-    
+    #jhu-images,
     #nyc-photos {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        
-        width: 100% !important;
-        max-width: 600px !important;
-        margin: 30px auto 40px !important;
-        display: none; /* Hidden by default, shown via JS */
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: 600px;
+        margin: 30px auto 40px;
     }
     
+    #jhu-images.show,
     #nyc-photos.show {
-        display: block !important;
+        display: block;
     }
     
+    #jhu-images p,
     #nyc-photos p {
-        font-size: 13px !important;
-        margin-bottom: 12px !important;
+        font-size: 13px;
+        margin-bottom: 12px;
     }
     
-    #nyc-photos > div {
-        gap: 15px !important;
+    #jhu-images .image-grid {
+        gap: 15px;
     }
     
-    /* Footer adjustments for tablet */
+    #nyc-photos .image-grid {
+        gap: 15px;
+    }
+    
     footer {
         margin: 150px 7% 40px 7%;
         font-size: 13px;
     }
     
-    .leftsideoffooter {
-        gap: 20px;
-        flex-wrap: nowrap;
-    }
-    
+    .leftsideoffooter,
     .socials {
         gap: 15px;
         flex-wrap: nowrap;
     }
 }
 
-
-
-/* ----------------------------------------
-   Mobile & Small Tablet (320px - 768px)
-   ---------------------------------------- */
-@media screen and (max-width: 480px) and (min-width: 319px) {
-    
-    /* Navigation - Horizontal on mobile */
+@media screen and (max-width: 480px) {
     .sections {
         display: flex;
         flex-direction: row;
         gap: 15px;
-        
         margin: 40px 5% 0;
         font-size: 11px;
         line-height: normal;
         max-width: 100%;
     }
     
-    /* Disable grid layout on mobile */
     .main-grid {
-        display: block !important;
-        padding-left: 0 !important;
-        margin: -20px 5% 0 !important;
+        display: block;
+        padding-left: 0;
+        margin: -20px 5% 0;
     }
     
-    /* Content adjustments */
     .About {
-        display: block !important;
-        margin: 40px 0 50px 0 !important;
-        max-width: 100% !important;
+        display: block;
+        margin: 40px 0 50px 0;
+        max-width: 100%;
         font-size: 12px;
     }
     
-    /* Adjust standalone About sections for mobile */
     .awards-page .About,
     .projects-page .About,
     .research-page .About {
-        margin: 20px 5% 50px 5% !important;
-        max-width: 90% !important;
+        margin: 20px 5% 50px 5%;
+        max-width: 90%;
     }
-
+    
     .nyc-page .About {
-        margin: 20px 5% -350px 5% !important;
-        max-width: 90% !important;
+        margin: 20px 5% -350px 5%;
+        max-width: 90%;
     }
-
+    
     #nyc-photos p {
-        font-size: 12px !important;
+        font-size: 12px;
     }
     
-    /* Video - relative positioning on mobile */
     #video-container {
-        position: relative !important;
-        width: 90% !important;
-        max-width: 100% !important;
-        min-width: auto !important;
-        
-        margin: -50px 5% 40px !important;
+        position: relative;
+        width: 90%;
+        max-width: 100%;
+        min-width: auto;
+        margin: -50px 5% 40px;
     }
     
-    /* JHU Images - stack vertically */
     #jhu-images {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        
-        width: 90% !important;
-        margin: -320px 5% 40px !important;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 90%;
+        margin: -320px 5% 40px;
     }
     
-    #jhu-images > div {
-        flex-direction: column !important;
-        gap: 15px !important;
+    #jhu-images .image-grid {
+        flex-direction: column;
+        gap: 15px;
     }
     
     #jhu-images img {
-        width: 100% !important;
+        width: 100%;
     }
     
-    /* NYC Photos - stack vertically */
     #nyc-photos {
-        position: relative !important;
-        top: 0 !important;
-        right: 0 !important;
-        
-        width: 90% !important;
-        margin: 20px 5% 20px !important;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 90%;
+        margin: 20px 5% 20px;
     }
     
-    #nyc-photos > div {
-        flex-direction: column !important;
-        gap: 15px !important;
+    #nyc-photos .image-grid {
+        flex-direction: column;
+        gap: 15px;
     }
     
     #nyc-photos img {
-        width: 100% !important;
+        width: 100%;
     }
     
-    /* Progress Bar - Mobile */
     .progress-wrapper {
         margin-top: 20px;
         width: 100%;
     }
     
-    .progress-wrapper > div:last-child {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        flex-wrap: nowrap !important;
+    .progress-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
         margin-top: 8px;
     }
     
     .progress-text,
     .progress-deadline {
-        font-size: 11px !important;
-        margin: 0 !important;
+        font-size: 11px;
+        margin: 0;
         white-space: nowrap;
     }
     
@@ -666,7 +571,6 @@ footer {
         flex-shrink: 1;
     }
     
-    /* NYC Button */
     .nyc-button-container {
         margin: 40px 5% 30px;
     }
@@ -676,33 +580,23 @@ footer {
         padding: 8px 20px;
     }
     
-    /* Footer - relative positioning on mobile */
     footer {
         position: relative;
         flex-direction: column;
         align-items: flex-start;
-        
         margin: 0 5%;
         padding: 20px 0;
         gap: 20px;
-        
         font-size: 11px;
         background-color: #ffffff;
     }
     
-    /* Page-specific footer margins */
     .home-page footer {
         margin-top: -10px;
     }
     
-    .awards-page footer {
-        margin-top: -40px;
-    }
-    
-    .projects-page footer {
-        margin-top: -40px;
-    }
-    
+    .awards-page footer,
+    .projects-page footer,
     .research-page footer {
         margin-top: -40px;
     }
@@ -712,10 +606,9 @@ footer {
     }
     
     .nyc-page footer.photos-visible {
-        margin-top: 50px !important;
+        margin-top: 50px;
     }
     
-    /* Footer sections */
     .leftsideoffooter {
         flex-direction: column;
         gap: 10px;
@@ -728,11 +621,6 @@ footer {
     }
 }
 
-
-
-/* ----------------------------------------
-   Print Styles
-   ---------------------------------------- */
 @media print {
     footer {
         position: relative;

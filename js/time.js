@@ -1,3 +1,4 @@
+// Update time display in footer
 function updateTime() {
     const now = new Date();
     
@@ -13,7 +14,11 @@ function updateTime() {
     hours = hours ? hours : 12; // 0 should be 12
     
     const timeString = `${hours}:${minutes} ${ampm}`;
-    document.getElementById('current-time').textContent = timeString;
+    
+    const timeElement = document.getElementById('current-time');
+    if (timeElement) {
+        timeElement.textContent = timeString;
+    }
 }
 
 // Update time immediately

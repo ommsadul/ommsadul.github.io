@@ -6,7 +6,6 @@
         const nycTriggers = document.querySelectorAll('.nyc-photos-trigger');
         const nycPhotos = document.getElementById('nyc-photos');
         const footer = document.querySelector('footer');
-        
         let isPhotosShowing = false;
         
         console.log('NYC triggers found:', nycTriggers.length);
