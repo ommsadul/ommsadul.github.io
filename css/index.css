@@ -320,6 +320,18 @@ footer {
 }
 
 /* ========================================
+   MOBILE SPECIFIC (up to 480px only)
+   ======================================== */
+
+@media screen and (max-width: 480px) {
+    /* Target the second NYC image specifically on mobile */
+    #nyc-photos .image-grid img:nth-child(2) {
+        width: 100% !important;        /* CHANGE THIS - try 40%, 50%, 60%, 80% */
+        max-width: 500px !important;  /* CHANGE THIS - maximum size in pixels */
+    }
+}
+
+/* ========================================
    6. MEDIA QUERIES (Mobile-First)
    ======================================== */
 
