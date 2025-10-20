@@ -2,13 +2,13 @@
    PORTFOLIO WEBSITE STYLES - Omm Sadul
    ========================================
    
-   Table of Contents:
-   1. Global Styles & Reset
-   2. Navigation
-   3. Main Content & Layout
-   4. Footer
-   5. Interactive Elements
-   6. Media Queries
+   Refactored for:
+   - DRY (Don't Repeat Yourself) principle
+   - Mobile-first approach
+   - Reduced specificity conflicts
+   - Better maintainability
+   - Responsive image sizing
+   - Mobile overlay fixes
    ======================================== */
 
 /* ========================================
@@ -37,63 +37,50 @@ body {
    ======================================== */
 
 .sections {
-    display: inline-block;
-    margin: 90px 5% 0 9%;
-    max-width: 200px;
-    vertical-align: top;
-    position: relative;
-    z-index: 200;
-    font-size: 13px;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 40px 5% 0;
+    font-size: 11px;
+    line-height: normal;
     color: #696969;
+    position: relative;
+    z-index: 300;
 }
 
 .sections p {
     margin: 0;
+    color: #696969;
 }
 
-.sections p:first-child,
-.sections p.active {
+/* Any <p> that does NOT contain an <a> tag = current page */
+.sections p:not(:has(a)) {
     color: #000000;
+    cursor: default;
 }
 
 .sections a {
-    color: #696969;
+    color: inherit;
     text-decoration: none;
     transition: color 0.2s ease;
+    pointer-events: auto;
 }
 
 .sections a:hover {
-    color: #404040;
+    color: #000000;
 }
 
 /* ========================================
    3. MAIN CONTENT & LAYOUT
    ======================================== */
 
-.main-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 60px;
-    align-items: start;
-    max-width: 1600px;
-    margin: -70px 9% 0;
-    padding-left: 250px;
-}
-
+/* Mobile-first: Base styles for all screens */
 .About {
-    max-width: 650px;
-    font-size: 16px;
+    margin: 40px 5% 50px;
+    max-width: 100%;
+    font-size: 12px;
     line-height: 1.3;
     color: #696969;
-}
-
-.awards-page .About,
-.projects-page .About,
-.research-page .About,
-.nyc-page .About {
-    margin: -70px 25% 0;
-    min-height: calc(100vh - 300px);
 }
 
 .About p,
@@ -116,12 +103,22 @@ body {
     text-decoration: underline;
 }
 
+/* Homepage has different layout */
+.main-grid {
+    display: block;
+    margin: -20px 5% 0;
+}
+
+.main-grid .About {
+    margin: 40px 0 50px 0;
+}
+
+/* Video container - mobile first */
 #video-container {
-    width: 100%;
-    max-width: 650px;
-    min-width: 600px;
-    margin-right: -90px;
-    margin-top: -80px;
+    position: relative;
+    width: 90%;
+    max-width: 100%;
+    margin: -50px 5% 40px;
 }
 
 #video-container video {
@@ -129,74 +126,74 @@ body {
     display: block;
 }
 
-#jhu-images {
-    position: fixed;
-    top: 120px;
-    right: 5%;
-    width: 600px;
-    max-width: 600px;
-    z-index: 100;
-    pointer-events: none;
+/* ========================================
+   IMAGE OVERLAYS - MOBILE BASE (up to 480px)
+   ======================================== */
+
+#jhu-images,
+#nyc-photos {
+    position: relative; /* RELATIVE on mobile - prevents overlay issues */
+    width: 90%;
+    max-width: 500px; /* Maximum container size on mobile */
+    margin: 20px 5% 40px;
     display: none;
+    pointer-events: none;
+    z-index: 100;
 }
 
-#jhu-images p {
+#jhu-images {
+    margin: -320px 5% 40px;
+}
+
+#jhu-images p,
+#nyc-photos p {
     color: #696969;
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 15px;
     text-align: justify;
     pointer-events: auto;
 }
 
+/* JHU Images - Mobile */
 #jhu-images .image-grid {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
     pointer-events: auto;
 }
 
 #jhu-images img {
-    width: 50%;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     border-radius: 8px;
 }
 
-#nyc-photos {
-    position: fixed;
-    top: 120px;
-    right: 5%;
-    width: 600px;
-    max-width: 600px;
-    z-index: 100;
-    pointer-events: none;
-    display: none;
-}
-
-#nyc-photos p {
-    color: #696969;
-    font-size: 14px;
-    margin-bottom: 15px;
-    text-align: justify;
-    pointer-events: auto;
-}
-
+/* NYC Images - Mobile */
 #nyc-photos .image-grid {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     pointer-events: auto;
 }
 
 #nyc-photos img {
-    border-radius: 8px;
-}
-
-#nyc-photos img:first-child {
     width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
 }
 
 #nyc-photos img:last-child {
     width: 70%;
+    max-width: 350px;
+}
+
+/* Show images when triggered by JavaScript */
+#jhu-images.show,
+#nyc-photos.show {
+    display: block;
 }
 
 /* ========================================
@@ -205,31 +202,28 @@ body {
 
 footer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-top: 280px;
-    margin-left: 9%;
-    margin-right: 9%;
-    margin-bottom: 0;
-    padding: 0;
-    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    gap: 20px;
+    font-size: 11px;
     color: #696969;
-    background-color: transparent;
 }
 
 .leftsideoffooter {
     display: flex;
-    gap: 30px;
-    text-align: left;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .socials {
     display: flex;
-    gap: 20px;
-    text-align: right;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
 .socials a,
@@ -241,6 +235,11 @@ footer {
 
 .socials a:hover,
 .nyc-footer-link:hover {
+    color: #000000;
+}
+
+/* Make NYC link black on the NYC page */
+.nyc-page .nyc-footer-link {
     color: #000000;
 }
 
@@ -259,6 +258,7 @@ footer {
     text-decoration: underline;
 }
 
+/* Progress bar */
 .progress-wrapper {
     margin-top: 20px;
 }
@@ -281,31 +281,34 @@ footer {
 .progress-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 8px;
 }
 
 .progress-text,
 .progress-deadline {
-    font-size: 13px;
+    font-size: 11px;
     color: #999;
     font-weight: 300;
     margin: 0;
+    white-space: nowrap;
 }
 
 .progress-deadline {
     color: #696969;
 }
 
+/* NYC Button */
 .nyc-button-container {
-    margin: 60px 9% 40px;
+    margin: 40px 5% 30px;
 }
 
 .nyc-button {
     display: inline-block;
-    padding: 10px 24px;
+    padding: 8px 20px;
     background-color: #000000;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     text-decoration: none;
     border-radius: 5px;
@@ -316,308 +319,248 @@ footer {
     background-color: #333333;
 }
 
-.awards-page .About,
-.projects-page .About,
-.research-page .About,
-.nyc-page .About {
-    margin-bottom: -171px;
-}
-
-.sections,
-.main-grid,
-.About {
-    flex-shrink: 0;
-}
-
 /* ========================================
-   6. MEDIA QUERIES
+   6. MEDIA QUERIES (Mobile-First)
    ======================================== */
 
-@media screen and (min-width: 1601px) {
-    .main-grid {
-        padding-left: 280px;
-        gap: 80px;
-    }
-    
-    #video-container {
-        max-width: 600px;
-    }
-    
-    #jhu-images {
-        width: 600px;
-        max-width: 600px;
-    }
-}
-
-@media screen and (max-width: 1600px) and (min-width: 1201px) {
-    .main-grid {
-        padding-left: 250px;
-        gap: 50px;
-    }
-    
-    footer {
+/* Tablet: 481px to 1200px */
+@media screen and (min-width: 481px) {
+    .sections {
+        gap: 20px;
+        margin: 90px 7% 0;
         font-size: 13px;
     }
-    
-    .leftsideoffooter {
-        gap: 20px;
-    }
-    
-    .socials {
-        gap: 18px;
-    }
-    
-    #jhu-images,
-    #nyc-photos {
-        width: 380px;
-        max-width: 380px;
-        top: 120px;
-        right: 2%;
-    }
-    
-    #jhu-images p,
-    #nyc-photos p {
-        font-size: 11px;
-        margin-bottom: 8px;
-    }
-}
 
-@media screen and (max-width: 1200px) and (min-width: 481px) {
-    .sections {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        margin: 90px 7% 0 7%;
-        max-width: 100%;
+    .About {
+        margin: 30px 7% 0;
+        font-size: 16px;
     }
-    
+
     .main-grid {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        padding-left: 0;
         margin: 40px 7% 180px;
     }
-    
-    .main-grid .About {
-        max-width: 100%;
-    }
-    
-    .awards-page .About,
-    .projects-page .About,
-    .research-page .About,
-    .nyc-page .About {
-        margin: 30px 7% 0;
-        max-width: 100%;
-    }
-    
-    #video-container {
-        width: 100%;
-        max-width: 600px;
-        min-width: auto;
-        margin-top: -80px;
-        margin-bottom: -110px;
-        margin-right: 0;
-    }
-    
+
+    /* Images still RELATIVE on tablet */
     #jhu-images,
     #nyc-photos {
-        position: relative;
-        top: auto;
-        right: auto;
+        position: relative; /* Still relative - prevents overlay */
         width: 100%;
-        max-width: 600px;
+        max-width: 600px; /* Bigger container on tablet */
         margin: 30px auto 40px;
     }
-    
-    #jhu-images.show,
-    #nyc-photos.show {
-        display: block;
-    }
-    
+
     #jhu-images p,
     #nyc-photos p {
         font-size: 13px;
         margin-bottom: 12px;
     }
-    
-    #jhu-images .image-grid {
-        gap: 15px;
+
+    #jhu-images img,
+    #nyc-photos img {
+        max-width: 600px; /* Images can be up to 600px */
     }
-    
-    #nyc-photos .image-grid {
-        gap: 15px;
+
+    #nyc-photos img:last-child {
+        max-width: 420px; /* 70% of 600px */
     }
-    
+
+    #video-container {
+        width: 100%;
+        max-width: 600px;
+        margin: -80px auto -110px;
+    }
+
     footer {
-        margin: 150px 7% 40px 7%;
+        margin-top: auto;
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-bottom: 40px;
         font-size: 13px;
     }
-    
-    .leftsideoffooter,
+
+    .leftsideoffooter {
+        flex-direction: row;
+        gap: 20px;
+    }
+
     .socials {
         gap: 15px;
-        flex-wrap: nowrap;
+    }
+
+    .nyc-button-container {
+        margin: 60px 7% 40px;
+    }
+
+    .progress-text,
+    .progress-deadline {
+        font-size: 13px;
     }
 }
 
-@media screen and (max-width: 480px) {
+/* Desktop: 1201px+ */
+@media screen and (min-width: 1201px) {
     .sections {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-        margin: 40px 5% 0;
-        font-size: 11px;
-        line-height: normal;
-        max-width: 100%;
-    }
-    
-    .main-grid {
-        display: block;
-        padding-left: 0;
-        margin: -20px 5% 0;
-    }
-    
-    .About {
-        display: block;
-        margin: 40px 0 50px 0;
-        max-width: 100%;
-        font-size: 12px;
-    }
-    
-    .awards-page .About,
-    .projects-page .About,
-    .research-page .About {
-        margin: 20px 5% 50px 5%;
-        max-width: 90%;
-    }
-    
-    .nyc-page .About {
-        margin: 20px 5% -350px 5%;
-        max-width: 90%;
-    }
-    
-    #nyc-photos p {
-        font-size: 12px;
-    }
-    
-    #video-container {
-        position: relative;
-        width: 90%;
-        max-width: 100%;
-        min-width: auto;
-        margin: -50px 5% 40px;
-    }
-    
-    #jhu-images {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 90%;
-        margin: -320px 5% 40px;
-    }
-    
-    #jhu-images .image-grid {
+        display: inline-block;
         flex-direction: column;
-        gap: 15px;
-    }
-    
-    #jhu-images img {
-        width: 100%;
-    }
-    
-    #nyc-photos {
+        margin: 90px 5% 0 9%;
+        max-width: 200px;
+        font-size: 13px;
+        line-height: 1.6;
         position: relative;
-        top: 0;
-        right: 0;
-        width: 90%;
-        margin: 20px 5% 20px;
+        z-index: 300;
     }
     
+    .sections p {
+        color: #000000;
+    }
+    
+    .sections p:has(a) {
+        color: #696969;
+    }
+    
+    .sections a:hover {
+        color: #000000;
+    }
+
+    .About {
+        margin: -70px 25% 0;
+        max-width: 650px;
+        min-height: calc(100vh - 300px);
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 50px;
+        align-items: start;
+        max-width: 1600px;
+        margin: -70px 9% 0;
+        padding-left: 250px;
+    }
+
+    .main-grid .About {
+        margin: 0;
+    }
+
+    #video-container {
+        max-width: 650px;
+        min-width: 600px;
+        margin-right: -90px;
+        margin-top: -80px;
+    }
+
+    /* NOW FIXED on desktop for overlay effect */
+    #jhu-images,
+    #nyc-photos {
+        position: fixed; /* Fixed positioning ONLY on desktop */
+        top: 120px;
+        right: 2%;
+        width: 380px; /* Fixed container width */
+        max-width: 380px;
+        margin: 0;
+    }
+
+    #jhu-images p,
+    #nyc-photos p {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    /* JHU images side by side */
+    #jhu-images .image-grid {
+        flex-direction: row;
+    }
+
+    #jhu-images img {
+        width: 50%; /* Each image 190px (50% of 380px) */
+        max-width: none; /* Remove mobile max-width */
+    }
+
+    /* NYC images stacked */
     #nyc-photos .image-grid {
         flex-direction: column;
-        gap: 15px;
     }
-    
+
     #nyc-photos img {
-        width: 100%;
+        width: 100%; /* First image fills 380px */
+        max-width: none;
     }
-    
-    .progress-wrapper {
-        margin-top: 20px;
-        width: 100%;
+
+    #nyc-photos img:last-child {
+        width: 70%; /* Second image is 266px (70% of 380px) */
+        max-width: none;
     }
-    
-    .progress-info {
-        display: flex;
+
+    footer {
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: nowrap;
-        margin-top: 8px;
-    }
-    
-    .progress-text,
-    .progress-deadline {
-        font-size: 11px;
-        margin: 0;
-        white-space: nowrap;
-    }
-    
-    .progress-text {
-        flex-shrink: 0;
-    }
-    
-    .progress-deadline {
-        text-align: right;
-        flex-shrink: 1;
-    }
-    
-    .nyc-button-container {
-        margin: 40px 5% 30px;
-    }
-    
-    .nyc-button {
+        margin-top: auto;
+        margin-left: 9%;
+        margin-right: 9%;
+        margin-bottom: 50px;
         font-size: 13px;
-        padding: 8px 20px;
     }
-    
-    footer {
-        position: relative;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0 5%;
-        padding: 20px 0;
-        gap: 20px;
-        font-size: 11px;
-        background-color: #ffffff;
-    }
-    
-    .home-page footer {
-        margin-top: -10px;
-    }
-    
-    .awards-page footer,
-    .projects-page footer,
-    .research-page footer {
-        margin-top: -40px;
-    }
-    
-    .nyc-page footer {
-        margin-top: 360px;
-    }
-    
-    .nyc-page footer.photos-visible {
-        margin-top: 50px;
-    }
-    
+
     .leftsideoffooter {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 20px;
     }
-    
+
     .socials {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 14px;
+        gap: 18px;
+    }
+}
+
+/* Large Desktop: 1601px+ */
+@media screen and (min-width: 1601px) {
+    .main-grid {
+        padding-left: 280px;
+        gap: 80px;
+    }
+
+    #video-container {
+        max-width: 600px;
+    }
+
+    /* Bigger overlay containers */
+    #jhu-images,
+    #nyc-photos {
+        width: 600px; /* Bigger on large screens */
+        max-width: 600px;
+        right: 5%;
+    }
+
+    #jhu-images p,
+    #nyc-photos p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    /* JHU images side by side - larger */
+    #jhu-images img {
+        width: 50%; /* Each image 300px (50% of 600px) */
+    }
+
+    /* NYC images - larger */
+    #nyc-photos img {
+        width: 100%; /* First image fills 600px */
+    }
+
+    #nyc-photos img:last-child {
+        width: 70%; /* Second image is 420px (70% of 600px) */
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    .leftsideoffooter {
+        gap: 30px;
+    }
+
+    .socials {
+        gap: 20px;
     }
 }
 
@@ -625,7 +568,7 @@ footer {
     footer {
         position: relative;
     }
-    
+
     #jhu-images,
     #nyc-photos,
     #video-container {
