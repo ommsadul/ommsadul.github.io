@@ -4,41 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../assets/1f4ac.svg">
-    <title>Projects - Omm Sadul</title>
+    <title>Proof of Work - Omm Sadul</title>
     <link href="../css/index.css" rel="stylesheet">
 </head>
 
 <body class="projects-page">
     <nav class="sections">
-        <p><a href="../index.html">About</a></p>
-        <p><a href="awards.html">Awards</a></p>
-        <p>Projects</p>
-        <p><a href="researchpublications.html">Research Publications</a></p>
+        <p><a href="../index.html">about</a></p>
+        <p>proof of work</p>
+        <p><a href="researchpublications.html">research</a></p>
+        <p><a href="awards.html">awards</a></p>
     </nav>
 
     <main class="main-grid">
         <section class="About">
-            <!-- Your original content goes here - add your actual projects -->
-            <p> [ projects section is currently under development. check back later ! ] </p>
-            <br>
-            <img src="../assets/giphy (1).gif" alt="Under Construction" style="max-width: 300px; margin: 20px auto; display: block;">
+            <div class="projects-template" aria-label="Sample project template">
+                <article class="project-entry">
+                    <header class="project-entry-head">
+                        <h2>campus founders network</h2>
+                    </header>
+
+                    <p class="project-entry-one-liner">like YC co-founder matching, but for universities. create your profile, share your ideas, and connect with fellow students who want to build startups together.</p>
+
+                    <div class="project-entry-stack" aria-label="Project stack">
+                        <span>TypeScript</span>
+                        <span>Next.js</span>
+                        <span>PostgreSQL</span>
+                        <span>Vercel</span>
+                    </div>
+
+                    <div class="project-entry-links">
+                        <a href="https://campusfoundersnetwork.vercel.app/" aria-label="Open project website" target="_blank" rel="noopener noreferrer">website</a>
+                        <a href="https://github.com/ommsadul/campusfoundersnetwork" aria-label="Open project GitHub repository" target="_blank" rel="noopener noreferrer">github</a>
+                    </div>
+                </article>
+
+                <article class="project-entry">
+                    <header class="project-entry-head">
+                        <h2>drizzy</h2>
+                    </header>
+
+                    <p class="project-entry-one-liner">drizzy is a ranking layer for playlists. connect spotify, publish your best sets, and let the community decide what climbs. no ads, no algorithm tweaks - just curators and their work.</p>
+
+                    <div class="project-entry-stack" aria-label="Project stack">
+                        <span>Next.js</span>
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind CSS</span>
+                        <span>Prisma ORM</span>
+                        <span>PostgreSQL</span>
+                        <span>NextAuth/Auth.js (Spotify OAuth)</span>
+                    </div>
+
+                    <div class="project-entry-links">
+                        <a href="https://drizzy-one.vercel.app/" aria-label="Open Drizzy website" target="_blank" rel="noopener noreferrer">website</a>
+                        <a href="https://github.com/ommsadul/drizzy" aria-label="Open Drizzy GitHub repository" target="_blank" rel="noopener noreferrer">github</a>
+                    </div>
+                </article>
+
+                <article class="project-entry">
+                    <header class="project-entry-head">
+                        <h2>terminal lyrics finder</h2>
+                    </header>
+
+                    <p class="project-entry-one-liner">ask for any song, we grab the closest match from iTunes, attempt to download synced (timestamped) lyrics from LRCLIB, and stream them in your terminal in real time. if synced lyrics are missing, we fall back to plain text from LRCLIB or lyrics.ovh.</p>
+
+                    <div class="project-entry-links">
+                        <a href="https://github.com/ommsadul/terminal-lyrics-finder" aria-label="Open Terminal Lyrics Finder GitHub repository" target="_blank" rel="noopener noreferrer">github</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="leftsideoffooter">
-            <span><a href="nyc.html" class="nyc-footer-link">NYC</a></span>
-            <span>Made on Earth</span>
-            <span>It's <span id="current-time"></span> for Omm</span>
+            <!-- NYC link hidden for now. Restore by re-adding: <span><a href="nyc.html" class="nyc-footer-link">NYC</a></span> -->
+            <span>made on earth</span>
+            <span>It's <span id="current-time"></span> for omm</span>
         </div>
 
         <div class="socials">
-            <span><a href="https://x.com/ommsadul" target="_blank" rel="noopener noreferrer">X</a></span>
+            <span><a href="https://x.com/ommstwt" target="_blank" rel="noopener noreferrer">X</a></span>
             <span><a href="https://www.linkedin.com/in/omm-sadul-706515227" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
             <span><a href="https://github.com/ommsadul" target="_blank" rel="noopener noreferrer">Github</a></span>
-            <span><a href="https://scholar.google.com/citations?user=omm" target="_blank" rel="noopener noreferrer">Google Scholar</a></span>
-            <span><a href="mailto:omssadul@gmail.com">Email</a></span>
-            <span><a href="https://cal.com/ommsadul" target="_blank" rel="noopener noreferrer">Book a Meet</a></span>
+            <span><a href="mailto:ommsadul@gmail.com">Email</a></span>
         </div>
     </footer>
 
